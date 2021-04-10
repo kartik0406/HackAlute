@@ -145,6 +145,130 @@ app.post("/result",middleware.isLoggedIn,function(req,res){
 })
 
 
+app.get("/projects/new", middleware.isLoggedIn, function (req, res) {
+  res.render("new", { user: req.user });
+});
+app.post("/projects", function (req, res) {
+  const title = req.body.title;
+  const description = req.body.description;
+  const technology = req.body.technology;
+  const max = req.body.members;
+  const credits = max * 10;
+  var user = {
+    id: req.user,
+    username: req.user.email,
+  };
+  const newproject = new Project({
+    title: title,
+    descrip: description,
+    technologies: technology,
+    max: max,
+    need: max,
+    skills:req.body.skills,
+    credits: credits,
+    owner: user,
+  });
+
+  newproject.save(function (err) {
+    if (!err) {
+      req.user.projects.push(newproject._id);
+      req.user.save();
+      res.redirect("/projects");
+    }
+  });
+});
+
+app.get("/projects/:id", function (req, res) {
+  const projectId = req.params.id;
+  Project.findById(projectId, function (err, foundProject) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("show", { project: foundProject, user: req.user });
+    }
+  });
+});
+
+app.get("/userprofile/editproject", middleware.isLoggedIn, function (req, res) {
+  User.findById(req.user.id)
+    .populate("projects")
+    .exec(function (err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render("editproject", { userprojects: foundUser, user: req.user });
+      }
+    });
+});
+
+app.get("/userprofile", middleware.isLoggedIn, function (req, res) {
+  Appliedproject.find({}).remove().exec();
+  User.findById(req.user._id, function (err, foundUser) {
+    console.log(foundUser.projects);
+    User.find(
+      { appliedProjects: { $in: foundUser.projects } },
+      function (err, foundApplications) {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(foundApplications);
+
+          foundApplications.forEach(function (foundApplication) {
+            console.log(foundApplication.appliedProjects);
+            foundApplication.appliedProjects.forEach(function (project) {
+              Project.findById(project, function (err, foundProject) {
+                if (err) {
+                  console.log(err);
+                } else {
+                  User.findById(
+                    foundProject.owner.id,
+                    function (err, foundOwner) {
+                      if (err) {
+                        console.log(err);
+                      } else {
+                        //console.log(foundOwner.username);
+                        if (foundOwner.username === req.user.username) {
+                          console.log(
+                            foundProject.title,
+                            foundApplication.email
+                          );
+
+                          let appliedProjectss = new Appliedproject({
+                            id: foundProject._id,
+                            title: foundProject.title,
+                            name: foundApplication.email,
+                            userId: foundApplication._id,
+                          });
+                          appliedProjectss.save();
+                        }
+                      }
+                    }
+                  );
+                }
+              });
+            });
+          });
+        }
+      }
+    );
+  });
+
+
+  res.render("profile", { user: req.user });
+});
+
+app.get("/userprofile/:id", function (req, res) {
+  var profileuser = req.params.id;
+  User.findById(profileuser, function (err, foundUser) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("userprofile", { puser: foundUser, user: req.user });
+    }
+  });
+});
+
+
 
 
 
