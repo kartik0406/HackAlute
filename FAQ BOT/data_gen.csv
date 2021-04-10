@@ -1,0 +1,405 @@
+yo,gen_hi
+Heya,gen_hi
+Namaste,gen_hi
+Hey,gen_hi
+Great to see you!,gen_hi
+Ssup,gen_hi
+Whatup,gen_hi
+Yo,gen_hi
+hello,gen_hi
+Howdy,gen_hi
+hey there,gen_hi
+Hey There!,gen_hi
+Hello!,gen_hi
+Hey there,gen_hi
+Hey buddy !,gen_hi
+Hi  need support ,gen_hi
+Hii,gen_hi
+Heyo,gen_hi
+Hello!,gen_hi
+Hello there!,gen_hi
+Hello There! ,gen_hi
+Yo,gen_hi
+Hii,gen_hi
+Hey,gen_hi
+Hi,gen_hi
+Hey!,gen_hi
+Hey there,gen_hi
+Hola!,gen_hi
+Hello chatbox ,gen_hi
+what's up,gen_how_you
+What's up,gen_how_you
+Wassup,gen_how_you
+How are you doing,gen_how_you
+How 's life treating you?,gen_how_you
+How is life?,gen_how_you
+How ya doin,gen_how_you
+Sup,gen_how_you
+how you doing?,gen_how_you
+How do you do,gen_how_you
+sup ?,gen_how_you
+How do you do?,gen_how_you
+How have you been?,gen_how_you
+How are you doing,gen_how_you
+I am great ! Thank you ! ,gen_how_you
+Wassup,gen_how_you
+How are you?,gen_how_you
+What's new?,gen_how_you
+How you doin?,gen_how_you
+Wassup,gen_how_you
+Hows life?,gen_how_you
+How was your day?,gen_how_you
+How you doin?,gen_how_you
+Whats up?,gen_how_you
+What's happening?,gen_how_you
+Kya chal raha?,gen_how_you
+Wassup?,gen_how_you
+How you doing?,gen_how_you
+Are you fine?,gen_how_you
+Are you good?,gen_how_you
+How are you?,gen_how_you
+How are you doing?,gen_how_you
+who are you?,gen_who_you
+what are you exactly?,gen_who_you
+identify yourself,gen_who_you
+who is this,gen_who_you
+who is at the other end of this chat,gen_who_you
+who are you?,gen_who_you
+What're you?,gen_who_you
+Who am I talking to?,gen_who_you
+Who are you?,gen_who_you
+May I know the Identity of this person?,gen_who_you
+Where do you belong,gen_who_you
+What do you do here,gen_who_you
+Who you,gen_who_you
+who are u ?,gen_who_you
+and you are.?,gen_who_you
+whats your name ?,gen_who_you
+thou shall reveal yourself,gen_who_you
+May I get your name pls?,gen_who_you
+What do they call you,gen_who_you
+Have I met you anywhere ?,gen_who_you
+How abt you ,gen_who_you
+Who dis,gen_who_you
+May I know who you are?,gen_who_you
+How can you help me?,gen_who_you
+What's your name?,gen_who_you
+Do I know u,gen_who_you
+Who are youu?,gen_name
+What can I call you?,gen_name
+Your name?,gen_name
+Can you tell me your name?,gen_name
+Are you there?,gen_name
+Any one there?,gen_name
+What is your name?,gen_name
+are you abir?,gen_name
+Is anyone there?,gen_name
+Your name is?,gen_name
+Who is chatting?,gen_name
+Tell me about your self?,gen_name
+Who are you?,gen_name
+Who am I chatting with?,gen_name
+What's your name?,gen_name
+What should I say as your name?,gen_name
+Tell me your name?,gen_name
+What are you called?,gen_name
+Is there a bot chatting to me?,gen_bot
+Is it automated message?,gen_bot
+Computer based pely,gen_bot
+Bot or human?,gen_bot
+Bot is chatting with me?,gen_bot
+Are you system generated message?,gen_bot
+Are you robot?,gen_bot
+Are you machine?,gen_bot
+Are you just computer?,gen_bot
+Are you a robot?,gen_bot
+Are you a person?,gen_bot
+Are you a machine?,gen_bot
+Are you a chatbot?,gen_bot
+Are you a bot?,gen_bot
+Are these automated messages?,gen_bot
+Am I talking to a bot?,gen_bot
+You are a boy are girl?,gen_bot
+You are a bot or human?,gen_bot
+This is a machine?,gen_bot
+This is a chatbot?,gen_bot
+System generated reply,gen_bot
+Sir you system genretrd,gen_bot
+Is this computer based response,gen_bot
+Is this a machine?,gen_bot
+Are you a human?,gen_bot
+u a bot?,gen_bot
+Are you an AI?,gen_bot
+"You are a bot, aren't you?",gen_bot
+Are you a bot,gen_bot
+Are you a man made,gen_bot
+"Say, you wouldn't happen to be a bot would you?",gen_bot
+Are you a computer?,gen_bot
+am i talking to a bot?,gen_bot
+You sound like a bot.,gen_bot
+Are you real ? ,gen_bot
+are you not a human?,gen_bot
+Are you a bot perhaps?,gen_bot
+Are you a robot,gen_bot
+"You sound like a bot , are you ? ",gen_bot
+R u robot,gen_bot
+Are you a bot,gen_bot
+Are you a bot?,gen_bot
+Are you a robot?,gen_bot
+Are you a bot?,gen_bot
+u a human?,gen_human
+Are you a homo sapien?,gen_human
+"I don't think you're a human, are you?",gen_human
+Are you human,gen_human
+Are you a living being,gen_human
+Are you a person,gen_human
+Do you have feelings?,gen_human
+are you a person?,gen_human
+"you're not a human, are you?",gen_human
+are you flesh?,gen_human
+"If you don't mind me asking, are you human?",gen_human
+Are you one of us,gen_human
+I don't think you are a human or are you ?,gen_human
+Or u r human,gen_human
+hooman.?,gen_human
+Are you human?,gen_human
+Are you a person or a bot?,gen_human
+"Humans amuse me, are you one?",gen_human
+You're not human,gen_human
+who made you?,gen_who_made
+Who're your parents?,gen_who_made
+Who created you?,gen_who_made
+Who is your creator,gen_who_made
+May i know the identity of you're creator/creators?,gen_who_made
+What kind of organism are you,gen_who_made
+Who art thy creator,gen_who_made
+Who're you're parents,gen_who_made
+who made you?,gen_who_made
+who created you?,gen_who_made
+who owns you ?,gen_who_made
+who is your owner?,gen_who_made
+Who is your creator?,gen_who_made
+Who is your creator,gen_who_made
+Who is your creator ? ,gen_who_made
+Who made you ,gen_who_made
+What master do you serve,gen_who_made
+Who created you?,gen_who_made
+Who created you? ,gen_who_made
+Who made you?,gen_who_made
+Bot specs,gen_who_made
+plis help,gen_help
+Can I get some help?,gen_help
+I want some help. Can you help me?,gen_help
+Can you help me,gen_help
+"If its not too much to ask , can you assist me?",gen_help
+I need help,gen_help
+I'm having a problem ,gen_help
+I need a favour ,gen_help
+can u help me?,gen_help
+can you be of any help to me?,gen_help
+would you help me ?,gen_help
+could you please help me out here?,gen_help
+I got a problem. Some help would be nice.,gen_help
+Can you do me a favor,gen_help
+Are you able to help me ?,gen_help
+Need your help,gen_help
+Can you help me ?,gen_help
+Can you help me?,gen_help
+I need assistance,gen_help
+Please help me?,gen_help
+Save me,gen_help
+Need help please,gen_help
+Need help,gen_help
+I need some info,gen_help
+Will you help me?,gen_help
+What else can you do?,gen_help
+What do you do?,gen_help
+What can you help me with?,gen_help
+What can you do?,gen_help
+What are you good at?,gen_help
+Need help plz,gen_help
+How can you help me,gen_help
+Can you help me?,gen_help
+How can you assist?,gen_help
+How can you help me?,gen_help
+How do you help?,gen_help
+How to help you?,gen_help
+How will you assist me?,gen_help
+i need help,gen_help
+Can you tell some info,gen_help
+Help me please,gen_help
+I have a question,gen_query
+Need to aska query,gen_query
+I have a question for you,gen_query
+HAving a query,gen_query
+I have a query for you,gen_query
+I have a query,gen_query
+Have a query for you,gen_query
+quick question?,gen_query
+Hey I had a question,gen_query
+I have a question,gen_query
+I wanted to ask something,gen_query
+"i have a doubt lingering in my head, do you mind clarifying it for me ?",gen_query
+I have a doubt,gen_query
+Got a question for you,gen_query
+I didn't understand this,gen_query
+i have doubt,gen_query
+i might have a query,gen_query
+i have a question to ask,gen_query
+Actually I have some questions.,gen_query
+I have a question,gen_query
+I have a question ! ,gen_query
+I can't understand ,gen_query
+I have a question,gen_query
+I have a query,gen_query
+I have some doubts,gen_query
+Can you solve my doubt?,gen_query
+Could u answer my doubts,gen_query
+socials?,gen_social_media
+What're your socials,gen_social_media
+How can I find ALUTE on social media?,gen_social_media
+What are ALUTEs social media handles,gen_social_media
+is there any way to contact ALUTE on social media?,gen_social_media
+Your media pages,gen_social_media
+Where can I hit you up on social media,gen_social_media
+can i get link of ur social media handles,gen_social_media
+where can i stalk you?,gen_social_media
+are you on any social media ?,gen_social_media
+what is your instagram handle?,gen_social_media
+Where can I contact you?,gen_social_media
+Show me some platforms to connect with your org,gen_social_media
+Which social medias do you use ? ,gen_social_media
+Are you on social media ,gen_social_media
+What's ALUTE's insta,gen_social_media
+Can you tell me about your social media handles?,gen_social_media
+Where can I follow ALUTE? ,gen_social_media
+Insta? Twitter?,gen_social_media
+collaborate?,gen_collab
+Can we collaborate with your chapter?,gen_collab
+Can we host an website together?,gen_collab
+How can we collaborate with ALUTE,gen_collab
+can i get in touch with ALUTE for future collaborations?,gen_collab
+Can we collaborate,gen_collab
+Can we collaborate with you,gen_collab
+how do i collaborate with you guys,gen_collab
+we wanna collaborate with you people,gen_collab
+can we collaborate?,gen_collab
+Can we do a collaboration together?,gen_collab
+Can we do a collab with ALUTE,gen_collab
+Can we club our website together ?,gen_collab
+Do u collaborate with other company ,gen_collab
+How do i reach out for collaboration with ALUTE,gen_collab
+Can we collaborate with ALUTE or do an website together?,gen_collab
+Any chance of collaboration?,gen_collab
+I want to collaborate,gen_collab
+can we collaborate,gen_collab
+I want to collaborate,gen_collab
+can i sponsor y'all?,gen_fund
+We have a funding offer for you if you want it.,gen_fund
+Can we provide ALUTE some financial aid?,gen_fund
+Do you need funding,gen_fund
+what our the ways in which i can Sponsor ALUTE?,gen_fund
+Do you need funding,gen_fund
+Are you in need of sponsors ,gen_fund
+can i sponsor the website,gen_fund
+does ALUTE by any chance need funding?,gen_fund
+how to sponsor?,gen_fund
+Are you in the need of any sponsors,gen_fund
+Can we have honour to sponsor your website ?,gen_fund
+We can give you funding ,gen_fund
+I would like to discuss some funding proposals,gen_fund
+Do you require funding?,gen_fund
+"I'm interested in funding this website, whom should I contact?",gen_fund
+I want to sponsor,gen_fund
+How can i help the website,gen_fund
+Do you have enough funding?,gen_fund
+I want to sponsor this website,gen_fund
+I would like to sponsor you.,gen_fund
+How can someone be a sponsor ?,gen_fund
+I interested in funding the website,gen_fund
+Why should I fund your website?,gen_fund
+Is your finance done get back to us here if you need anything ,gen_fund
+How to sponsor the website?,gen_fund
+How to sponsor the website?,gen_fund
+What are you willing to sponsor? ,gen_fund
+Can you advertise for me?,gen_fund
+Can a sponsor join?,gen_fund
+How can i sponsor this website,gen_fund
+Want to sponsor your website,gen_fund
+I want to sponsor,gen_fund
+I'm willing to contribute money for this website.,gen_fund
+How do i reach for any potential funding?,gen_fund
+Where can I register as sponsors?,gen_fund
+We would like to sponsor your website,gen_fund
+can we apply for funding? ,gen_fund
+I would like to join you as a sponsor.,gen_fund
+What if a sponsor wants to join us?,gen_fund
+Do you need more funds? ,gen_fund
+Can our company be a part of this endeavor as a sponsor? ,gen_fund
+Would you like to discuss more funding?,gen_fund
+Can we contact you for future funding?,gen_fund
+What form of help are you seeking in funding? ,gen_fund
+What are the benefits in funding your website?,gen_fund
+Whom to contact for funding purposes? ,gen_fund
+Any future benefits for funding your website?,gen_fund
+I have further doubts i want to clear,gen_contact_info
+Who to contact for further doubts?,gen_contact_info
+Give me the contact info of someone from ieee,gen_contact_info
+Who should I contact for more info?,gen_contact_info
+whom can I contact? ,gen_contact_info
+Whom to contact for more information,gen_contact_info
+How to contact the organisation committee?,gen_contact_info
+Whom can we contact for queries?,gen_contact_info
+Contact info?,gen_contact_info
+I want more details about the event Do you know someone who could help me out?,gen_contact_info
+Who can i contact for further details ?,gen_contact_info
+Whom do I need to contact?,gen_contact_info
+Who can I contact for more details,gen_contact_info
+whom should I contact? ,gen_contact_info
+Could you provide the details of a person to contact?,gen_contact_info
+Contact details of organisers,gen_contact_info
+Is there any general email id or platform where we can send our questions?,gen_contact_info
+where human?,gen_contact_info
+Where can I message you guys,gen_contact_info
+How do we contact you in future,gen_contact_info
+can you give me you're contact details?,gen_contact_info
+How do we get in touch with you,gen_contact_info
+How can we contact you for more information,gen_contact_info
+can i get a your contact info,gen_contact_info
+how can i get more info,gen_contact_info
+I wannt more details,gen_contact_info
+how to talk to you?,gen_contact_info
+"If any situation arises, how will ALUTE contact me?",gen_contact_info
+How can i connect with you ,gen_contact_info
+May I have your contact details ?,gen_contact_info
+How to contact you,gen_contact_info
+Further contact,gen_contact_info
+Who do I contact for further details?,gen_contact_info
+How do I get in touch with you?,gen_contact_info
+Any contact info,gen_contact_info
+ok bye,gen_bye
+Goodbye,gen_bye
+see ya!,gen_bye
+Arigato,gen_bye
+See you,gen_bye
+Nice to meet you ! ,gen_bye
+Thank u bye ,gen_bye
+bye bye,gen_bye
+adios,gen_bye
+bye till next time,gen_bye
+bbye,gen_bye
+goodbye,gen_bye
+Appreciate your help ,gen_thanks
+Thanks,gen_thanks
+Au revoir!,gen_thanks
+Thank You,gen_thanks
+Appreciate your help. Goodbye. ,gen_thanks
+thanks,gen_thanks
+Yup that's all,gen_thanks
+thanks a lot,gen_thanks
+Thank You very much,gen_thanks
+Thankyou for the information!,gen_thanks
+"Great, thanks!",gen_thanks
+Get post,gen_thanks
+Thank you for solving my doubts.,gen_thanks
+thanks for helping me,gen_thanks
