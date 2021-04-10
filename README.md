@@ -80,10 +80,10 @@ For using this project:
 
 
 ### Screenshots
-![](https://github.com/officialskilldev/hackulus/blob/main/image1.PNG)
-![](https://github.com/officialskilldev/hackulus/blob/main/image2.PNG)
-![](https://github.com/officialskilldev/hackulus/blob/main/image3.PNG)
-![](https://github.com/officialskilldev/hackulus/blob/main/image4.PNG)
-![](https://github.com/officialskilldev/hackulus/blob/main/image5.PNG)
-![](https://github.com/officialskilldev/hackulus/blob/main/image6.PNG)
+![](https://github.com/Harsh-1309/HackAlute/blob/main/image1.PNG)
+![](https://github.com/Harsh-1309/HackAlute/blob/main/image2.PNG)
+![](https://github.com/Harsh-1309/HackAlute/blob/main/image3.PNG)
+![](https://github.com/Harsh-1309/HackAlute/blob/main/image4.PNG)
+![](https://github.com/Harsh-1309/HackAlute/blob/main/image5.PNG)
+![](https://github.com/Harsh-1309/HackAlute/blob/main/image6.PNG)
 
