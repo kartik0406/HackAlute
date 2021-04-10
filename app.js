@@ -406,6 +406,187 @@ app.delete(
 );
 
 
+app.get("/showgotrequest", middleware.isLoggedIn, function (req, res) {
+
+
+  Appliedproject.find({}, function (err, foundappliedprojects) {
+    if (err) {
+      console.log(err);
+    } else {
+      
+          res.render("gotRequests", {
+            user: req.user,
+            applications: foundappliedprojects
+               });
+        
+    
+      
+    }
+  });
+});
+
+app.post("/showgotrequest/:id/:userId/accept", function (req, res) {
+  let flag1 = 0;
+  const projectId = req.params.id;
+  const userId = req.params.userId;
+  Project.findById(projectId, function (err, foundProject) {
+    if (err) {
+      console.log(err);
+    } else {
+      foundProject.team.forEach(function (member) {
+        if (member.equals(userId)) {
+          flag1 = 1;
+        }
+      });
+      if (flag1 === 0) {
+        if (foundProject.need != 0) {
+          foundProject.team.push(userId);
+          foundProject.need = foundProject.need - 1;
+        }
+        foundProject.save();
+      }
+    }
+  });
+  res.redirect("/showgotrequest");
+});
+app.post("/showgotrequest/:id/:userId/reject", function (req, res) {
+  const projectId = req.params.id;
+  const userId = req.params.userId;
+  Project.findById(projectId, function (err, foundProject) {
+    if (err) {
+      console.log(err);
+    } else {
+      const index = foundProject.team.indexOf(userId);
+      if (index > -1) {
+        var p = foundProject.team.splice(index, 1);
+        if (foundProject.need != foundProject.max) {
+          foundProject.need = foundProject.need + 1;
+        }
+      }
+
+      foundProject.save();
+    }
+  });
+  
+
+
+
+  Credit.deleteOne({id: projectId,userId:String(userId)}).then(function(){
+    console.log("Data deleted"); // Success
+}).catch(function(error){
+    console.log(error); // Failure
+});
+  res.redirect("/showgotrequest");
+});
+
+app.get("/request", middleware.isLoggedIn, function (req, res) {
+  User.findById(req.user._id, function (err, foundUser) {
+    if (err) {
+      console.log(err);
+    } else {
+      Project.find(
+        { _id: { $in: foundUser.appliedProjects } },
+        function (err, foundProjects) {
+          if (err) {
+            console.log(err);
+          } else {
+            res.render("requests", {
+              user: req.user,
+              appliedprojects: foundProjects,
+            });
+          }
+        }
+      );
+    }
+  });
+});
+
+app.post("/request/:id", middleware.isLoggedIn, function (req, res) {
+  const projectId = req.params.id;
+  User.findById(req.user._id, function (err, foundUser) {
+    if (err) {
+      console.log(err);
+      res.redirect("/projects");
+    } else {
+      var flag = 0;
+      foundUser.appliedProjects.forEach(function (project) {
+        console.log(projectId);
+        console.log(project);
+        if (project.equals(projectId)) {
+          flag = 1;
+        }
+      });
+      console.log(flag);
+      if (flag === 0) {
+        Project.findById(projectId, function (err, found) {
+          if (err) {
+            console.log(err);
+          } else {
+            User.findById(found.owner.id, function (err, foundOwner) {
+              if (err) {
+                console.log(err);
+              } else {
+                if (foundOwner.username != req.user.username) {
+                  console.log(foundOwner.username);
+                  console.log(req.user.username);
+                  foundUser.appliedProjects.push(projectId);
+                  foundUser.save();
+                }
+              }
+            });
+          }
+        });
+      }
+      res.redirect("/projects");
+    }
+  });
+});
+
+app.post("/request/:id/delete", middleware.isLoggedIn, function (req, res) {
+  const projectId = req.params.id;
+
+  Project.findById(projectId, function (err, foundProject) {
+    if (err) {
+      console.log(err);
+    } else {
+      const index = foundProject.team.indexOf(req.user._id);
+      if (index > -1) {
+        var p = foundProject.team.splice(index, 1);
+        if (foundProject.need != foundProject.max) {
+          foundProject.need = foundProject.need + 1;
+        }
+      }
+
+      foundProject.save();
+
+  
+    }
+ 
+  });
+
+  Credit.deleteOne({id: projectId,userId:String(req.user._id)}).then(function(){
+    console.log("Data deleted"); // Success
+}).catch(function(error){
+    console.log(error); // Failure
+});
+
+  User.findById({ _id: req.user._id }, function (err, foundUser) {
+    if (err) {
+      console.log(err);
+    } else {
+      const index = foundUser.appliedProjects.indexOf(projectId);
+      if (index > -1) {
+        var p = foundUser.appliedProjects.splice(index, 1);
+      }
+
+      foundUser.save();
+      res.redirect("/request");
+    }
+  });
+});
+
+
+
 
 
 
