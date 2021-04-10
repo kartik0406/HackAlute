@@ -585,6 +585,166 @@ app.post("/request/:id/delete", middleware.isLoggedIn, function (req, res) {
   });
 });
 
+app.get("/credits/request/:projectId/:userId",middleware.isLoggedIn,function(req,res){
+          const projectId=req.params.projectId;
+          const userId=req.params.userId;
+           res.render("creditsRequest",{user:req.user,pId:projectId,uId:userId});
+});
+
+
+app.post("/credits/:projectId/:userId",middleware.isLoggedIn,function (req, res) {
+    const pId = req.params.projectId;
+    const uId = req.params.userId;
+    const link=req.body.link;
+    const descrip=req.body.description;
+    Project.findById(pId, function (err, foundProject) {
+      if (err) {
+        console.log(err);
+      } else {
+        User.findById(uId, function (err, foundUser) {
+          if (err) {
+            console.log(err);
+          } else {
+            let credits = new Credit({
+              id: foundProject._id,
+              title: foundProject.title,
+              name: foundUser.email,
+              link:link,
+              credits:0,
+              description:descrip,
+              userId: foundUser._id,
+              owner:foundProject.owner,
+              flag:0
+            });
+           
+            Credit.find({id:pId,userId:uId}, function (err, found) {
+              if (err) {
+                console.log(err);
+              } 
+              else if(found.length==0){
+                credits.save();
+              }
+            });
+           
+              
+            
+            res.redirect("/request");
+          }
+        });
+      }
+    });
+  }
+);
+
+app.get("/admin", middleware.isLoggedIn, function (req, res) {
+  if (req.user.username.toLowerCase() === "kartikkhanna2000@gmail.com") {
+    Credit.find({},function(err,foundRequests){
+      if(err){
+        console.log(err);
+      }
+      else{
+        res.render("admin", { user: req.user,applications:foundRequests });
+      }
+    })
+    
+  }
+});
+app.get("/admin/:id",function(req,res){
+  if (req.user.username.toLowerCase() === "kartikkhanna2000@gmail.com") {
+    Credit.findById(req.params.id,function(err,foundApplication){
+      if(err){
+        console.log(err);
+      }
+      else{
+        res.render("status",{user:req.user,project:foundApplication});
+      }
+    })
+    
+
+
+  }
+});
+app.post("/credits/:id",function(req,res){
+  const id=req.params.id;
+  const usercredits=parseInt(req.body.credits);
+  console.log(id);
+
+  Credit.findById(id, function (err, found) {
+    if (err) {
+      console.log(err);
+    } 
+    else {
+      console.log(found.flag);
+      if(found.flag==0){
+      
+      User.findById(found.userId,function(err,foundUser){
+        if(err){
+          console.log(err)
+        }
+        else{
+         
+        
+          console.log(foundUser.credits);
+          foundUser.credits+=usercredits;
+          found.credits+=usercredits;
+          foundUser.save();
+          found.save();
+         
+          
+        }
+      })
+      found.flag=1;
+      found.save();
+      }
+    }
+  })
+
+  
+  res.redirect("/admin");
+ 
+})
+
+app.post("/creditsdelete/:id",function(req,res){
+  const id=req.params.id;
+  console.log(id);
+
+  Credit.findById(id, function (err, found) {
+    if (err) {
+      console.log(err);
+    } 
+    else {
+      console.log(found.flag);
+      if(found.flag==1){
+      
+      User.findById(found.userId,function(err,foundUser){
+        if(err){
+          console.log(err)
+        }
+        else{
+         
+        
+          console.log(foundUser.credits);
+          foundUser.credits-=found.credits;
+          found.credits-=found.credits;
+          found.save();
+          foundUser.save();
+         
+          
+        }
+      })
+      found.flag=0;
+      found.save();
+      }
+    }
+  })
+
+  
+  res.redirect("/admin");
+ 
+})
+
+
+
 
 
 
