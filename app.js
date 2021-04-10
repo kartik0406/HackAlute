@@ -268,6 +268,144 @@ app.get("/userprofile/:id", function (req, res) {
   });
 });
 
+app.get("/editprofile", middleware.isLoggedIn, function (req, res) {
+  res.render("editprofile", { user: req.user, puser: req.user });
+});
+
+app.put(
+  "/userprofile",
+  middleware.isLoggedIn,
+  upload.single("myImage"),
+  function (req, res) {
+    var img = fs.readFileSync(req.file.path);
+    var encode_image = img.toString("base64");
+    var finalImg = {
+      // Define a JSONobject for the image attributes for saving to database
+      contentType: req.file.mimetype,
+      path: req.file.path,
+      image: new Buffer(encode_image, "base64"),
+    };
+    var userData = {
+      username: req.user.username,
+      about: req.body.about,
+      img: finalImg,
+      email: req.body.name,
+      skills:req.body.skills,
+      institute: req.body.institute,
+      language: req.body.language,
+      github: req.body.github,
+      linkedIn: req.body.linkedIn,
+    };
+    User.findByIdAndUpdate(req.user.id, userData, function (err, updateUser) {
+      if (err) {
+        console.log(err);
+        res.redirect("/userprofile");
+      } else {
+        console.log(userData);
+        console.log(updateUser);
+        res.redirect("/userprofile");
+      }
+    });
+  }
+);
+
+app.get(
+  "/projects/editproject/:id",
+  middleware.isLoggedIn,
+  function (req, res) {
+    const projectId = req.params.id;
+    Project.findById(projectId, function (err, foundProject) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render("newedit", { user: req.user, project: foundProject });
+      }
+    });
+  }
+);
+
+app.put(
+  "/projects/editproject/:id",
+  middleware.isLoggedIn,
+  function (req, res) {
+    const projectId = req.params.id;
+    const title = req.body.title;
+    const description = req.body.description;
+    const technology = req.body.technology;
+    const max = req.body.members;
+    var user = {
+      id: req.user,
+      username: req.user.email,
+    };
+    const updatedProject = {
+      title: title,
+      descrip: description,
+      technologies: technology,
+      skills:req.body.skills,
+      max: max,
+      need: max,
+      owner: user,
+    };
+
+    Project.findByIdAndUpdate(
+      projectId,
+      updatedProject,
+      function (err, updated) {
+        if (err) {
+          console.log(err);
+          res.redirect("/editproject/editproject");
+        } else {
+          console.log(updatedProject);
+          console.log(updated);
+          res.redirect("/userprofile/editproject");
+        }
+      }
+    );
+  }
+);
+
+app.delete(
+  "/projects/editproject/delete/:id",
+  middleware.isLoggedIn,
+  function (req, res) {
+    Project.findById(req.params.id, function (err, foundProject) {
+      if (err) {
+        console.log(err);
+      } else {
+        User.findById(foundProject.owner.id, function (err, foundOwner) {
+          console.log(foundOwner.username);
+          console.log(req.user.username);
+          if (req.user.username === foundOwner.username) {
+            Project.findByIdAndRemove(
+              req.params.id,
+              function (err, foundProject) {
+                if (err) {
+                  console.log(err);
+                } else {
+                  console.log(foundOwner.projects);
+                  console.log(foundProject._id);
+
+                  // User.update({_id:req.user._id},{$pull:{projects:{$in:["5fc481fb447417376853704e"]}} },{multi:true});
+                  //  User.updateOne({_id: req.user._id}, {$pull: { projects: { $in: [foundProject._id] } }})
+                  const index = foundOwner.projects.indexOf(foundProject._id);
+                  if (index > -1) {
+                    var p = foundOwner.projects.splice(index, 1);
+                  }
+
+                  console.log(foundOwner.projects);
+                  foundOwner.save();
+                  res.redirect("/userprofile/editproject");
+                }
+              }
+            );
+          }
+        });
+      }
+    });
+  }
+);
+
+
 
 
 
