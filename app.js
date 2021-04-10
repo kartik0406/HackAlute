@@ -79,7 +79,70 @@ app.get("/projects", function (req, res) {
 
   
 });
+app.post("/result",middleware.isLoggedIn,function(req,res){
 
+  Project.find({}, function (err, allProjects) {
+    if (err) {
+      console.log(err);
+    } else {
+  var dataToSend;
+  // spawn new child process to call the python script
+  console.log(req.body.query);
+ 
+   var input=req.body.query;
+   User.findById(req.user._id,function(err,foundUser){
+    if(err){
+      console.log(err)
+    }
+    else{
+      console.log(foundUser.fag);
+  const python = spawn('python', ['FAQ_BOT_ACTUAL.py',input,JSON.stringify(foundUser.fag)]);
+  // collect data from script
+  python.stdout.on('data', function (data) {
+   dataToSend = data.toString();
+  
+    var dataToAppend="";
+    var i=dataToSend.length-1;
+    var count=0;
+    var pos=0;
+    while(i>=0){
+      
+      if(dataToSend[i]=="\n"){
+        count++;
+        if(count==2){
+          pos=i;
+          break;
+        }
+      }
+      i--;
+    }
+    dataToAppend=dataToSend.slice(i+1,dataToSend.length-2);
+    foundUser.fag.push(dataToAppend);
+    foundUser.save();
+   
+    fs.appendFile("data.text",dataToAppend+",",function(err){
+      if(err){
+        console.log(err)
+      }
+    })
+   
+    dataToSend=dataToSend.slice(0,dataToSend.length-dataToAppend.length-2)
+  
+  });
+  // in close event we are sure that stream from child process is closed
+  python.on('close', (code) => {
+  console.log(`child process close all stdio with code ${code}`);
+  // send data to browser
+  query_array.push([req.body.query,dataToSend]);
+  res.render("project",{user:req.user,projects: allProjects,queries:query_array});
+  });
+
+ }
+})
+}
+});
+  
+})
 
 
 
