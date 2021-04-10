@@ -46,7 +46,7 @@ With a structured way to work and incentives provided to users to complete their
 - Machine Learning
   - Python 
   - Scikit-learn, Pandas, NumPy
-  - TensorFlow, Keras, NLTK, OpenCV 
+  - TensorFlow, Keras, NLTK
   - Matplotlib
   - Node.js (endpoint integration)
 
