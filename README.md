@@ -11,7 +11,7 @@
 - [Harsh Malani](https://github.com/Harsh-1309)
 
 
-## Tracks Chosen - OPEN INNOVATION,AI and EDUCATION
+## Tracks Chosen - OPEN INNOVATION,EDUCATION and AI
 
 ## Problem Statement
 
