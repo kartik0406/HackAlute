@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x: hidden;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/public/assets/request.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Galdeano&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- This is  start of the navbar -->
+  <nav class="topnav">
+    <ul>
+      <li style="float:left"><a id="title" href="/">Alute Logo</a></li>
+
+      <% if(!user){%>
+        <li><a class="alig" href="/#contact">Go to your account</a></li>
+        <% }else{ %>
+          <li> <a href="/userprofile"><img src="/<%= user.img.path %>" alt=""></a></li>
+          <li><a class="alig" href="/logout">Logout</a></li>
+
+
+          <% } %>
+            <li><a class="alig" href="/track">Track Credits</a></li>
+            <li><a class="alig" href="/post">Post social good</a></li>
+            <li><a class="alig" href="/admin">Admin Dashboard</a></li>
+            <li><a class="alig" href="/">Home</a></li>
+    </ul>
+  </nav>
+  <!-- navbar end -->
+
+  <!-- List of people requested to your project -->
+  <section>
+    <div class="container topRow" style="margin-top: 1rem;">
+      <div class="row">
+        <div class="col-3 text-center">
+          <p>Project Title</p>
+
+        </div>
+        <div class="col-3 text-center">
+          <p class="created">Project Owner</p>
+
+        </div>
+        <div class="col-3 text-center">
+          <p>Credits Requested By</p>
+
+        </div>
+        <div class="col-3 text-center">
+          <p>Action</p>
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- request -->
+    <%var temp=0%>
+    <%applications.forEach(function(application){%>
+      <%if(temp==0){%>
+        <div class="container gap" style="background-color: rgb(181, 219, 171);color:#0d0744 "  >
+          <%temp=1;%>
+            <%}else{%>
+              <div class="container gap" style="background-color: rgb(242, 247, 237); color:white">
+                <%temp=0;%>
+                  <%}%>
+                    <div class="row">
+                      <div class="col-3 text-center">
+                        <%if(temp==1){%>
+                        <a href="/projects/<%=application.id%>" style="text-decoration: none;color:rgb(255, 255, 255)" >
+                        <%}else{%>
+                        <a href="/projects/<%=application.id%>" style="text-decoration: none; color:rgb(0, 0, 0)">
+                        <%}%>
+                          <p>
+                            <%=application.title%>
+                          </p>
+                        </a>
+
+                      </div>
+                      <div class="col-3 text-center">
+                        <%if(temp==1){%>
+                        <a href="/userprofile/<%=application.owner.id%>" style="text-decoration: none;color:rgb(255, 255, 255)" >
+                          <%}else{%>
+                        <a href="/userprofile/<%=application.owner.id%>" style="text-decoration: none;color:rgb(0, 0, 0) ">
+                          <%}%>
+                          <p class="created">
+                            <%=application.owner.username%>
+                          </p>
+                        </a>
+
+                      </div>
+                      <div class="col-3 text-center">
+                        <%if(temp==1){%>
+                        <a href="/userprofile/<%=application.userId%>" style="text-decoration: none; color:rgb(255, 255, 255)">
+                          <%}else{%>
+                        <a href="/userprofile/<%=application.userId%>" style="text-decoration: none;color:black ">
+                          <%}%>
+                          <p class="created">
+                            <%=application.name%>
+                          </p>
+                        </a>
+
+                      </div>
+                      <div class="col-3 text-center">
+                        <table>
+                          <tr>
+
+
+                            <%if(temp==1){%>
+                            <a href="/admin/<%=application._id%>" style="text-decoration: none;color:rgb(255, 255, 255) ">View
+                              status</a>
+                              <%}else{%>
+                            <a href="/admin/<%=application._id%>" style="text-decoration: none;color:black ">View
+                              status</a>
+                              <%}%>
+
+                          </tr>
+                        </table>
+
+
+                      </div>
+                    </div>
+              </div>
+                    <!-- request -->
+
+
+                    <%})%>
+
+
+
+  </section>
+
+  <!-- List ended -->
+
+
+
+
+
+
+
+
+
+  <!-- footer start -->
+  <div class="footer">
+    <p>Copyright &#169; 2021 Alute</p>
+</div>
+    
+  <!-- footer ended -->
+
+
+</body>
+
+</html>

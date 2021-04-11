@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit your project</title>
+     <link rel="stylesheet" href="/public/assets/new.css">
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Galdeano&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<!-- This is  start of the navbar -->
+<nav class="topnav"  >
+        <ul>
+          <li style="float:left"><a id="title" href="/">Alute Logo</a></li>
+          
+          <%  if(!user){%>
+          <li><a class="alig" href="/#contact">Go to your account</a></li>
+          <%  }else{ %>
+              <li> <a href="/userprofile"><img src="/<%= user.img.path %>" alt=""></a></li>
+              <li><a class="alig" href="/logout">Logout</a></li>
+       
+        
+          <%  } %>
+          <li><a class="alig" href="#contact">Spend credits</a></li>
+          
+          <li><a class="alig" href="/#explore">Explore</a></li>           
+          <li><a class="alig" href="/">About</a></li>
+          <li><a class="alig" href="/projects">Dashboard</a></li>
+          <li><a class="alig" href="/">Home</a></li>
+      </ul>
+    </nav>
+<!-- navbar end -->
+<div class=" first-block">
+  <div class="card-title project-details">Project details</div>
+  <form action="/projects/editproject/<%=project.id%>?_method=PUT" method="post" class="col s12 l12">
+          <div class="row">
+              <div  class="project-details col-md-3" style="display: block;">
+                <label>Title</label>
+              </div>
+              
+              <div class="col-md-4">
+                  <input value="<%=project.title%>" type="text" placeholder="Keep it short and precise" name="title" required>
+              </div>
+              <div class="col-md-5"></div>
+          </div>
+          <div class="row">
+              <div class="col-md-3">
+                <label>Description</label>
+              </div>
+              
+              <div class="col-md-6">
+                  <textarea id="textarea1" placeholder="Try to describe your idea as accurately as possible (Minimum 80 words)" value="" class="materialize-textarea" type="text" name="description" cols="10" rows="5" required minlength="80">
+                  <%=project.descrip%></textarea>
+               
+
+              </div>
+              <div class="col-md-3"></div>
+          </div>
+          <br>
+          <div class="row">
+              <div class="col-md-3">
+                <label>Technologies needed</label>
+              </div>
+              
+              <div class="col-md-6">
+                <input value="<%=project.technologies%>" placeholder="Include the domain(s) your project uses, eg. Machine Learning" type="text" name="technology" required>
+              </div>
+              <div class="col-md-3"></div>
+          </div>
+          
+          <div class="row">
+              <div class="col-md-3">
+                <label>Skills Required</label>
+              </div>
+              
+              <div class="col-md-6">
+                  <input value="<%=project.skills%>" placeholder="Enter the skills you prefer in your teammates, eg. ReactJS" type="text" name="skills" required>
+              </div>
+              <div class="col-md-3"></div>
+          </div>
+          <div class="row">
+              <div class="col-md-3">
+                <label>No. of members required</label>
+              </div>
+              
+              <div class="col-md-1">
+                  <input value="<%=project.max%>" type="number" name="members" required>
+              </div>
+              <div class="col-md-8"></div>
+          </div>
+          <br>
+          <div class="text-center"><button type="submit" class="text-center">Save</button></div>
+    </form>
+  </div>
+  <!-- project editing form start -->
+    
+              
+                  
+                  
+                 
+ 
+</body>
+</html>

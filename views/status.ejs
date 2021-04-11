@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Project Status</title>
+   
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Galdeano&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/assets/show.css" />
+   
+  </head>
+  <body>
+
+    <!-- This is  start of the navbar -->
+    <nav class="topnav">
+      <ul>
+        <li style="float:left"><a id="title" href="/">Alute Logo</a></li>
+  
+        <% if(!user){%>
+          <li><a class="alig" href="/#contact">Go to your account</a></li>
+          <% }else{ %>
+            <li> <a href="/userprofile"><img src="/<%= user.img.path %>" alt=""></a></li>
+            <li><a class="alig" href="/logout">Logout</a></li>
+  
+  
+            <% } %>
+            <li><a class="alig" href="/track">Track Credits</a></li>
+            <li><a class="alig" href="/post">Post social good</a></li>
+              <li><a class="alig" href="/admin">Admin Dashboard</a></li>
+              <li><a class="alig" href="/">Home</a></li>
+      </ul>
+    </nav>
+    <!-- navbar end -->
+
+
+     <!-- Project details started   -->
+     <div class="container">
+    <h1 class="text-center">Project Report</h1>
+
+  </div>
+      <div class="text-center container">
+      <h2>
+        Project Title:   <%=project.title%>
+        
+      </h2>
+     <h2>Alotted Credits: <%=project.credits%></h2>
+      <h2>Description</h2>
+      <p>
+        <%=project.description%>
+      </p>
+      <h2>Applicant name</h2>
+      <p>
+        <%=project.name%>
+      </p>
+
+      <h2>Github Link: </h2>
+      <p>
+        <a href="https://<%=project.link%>" target="_blank" style="text-decoration: none; color:white"><%=project.link%></a>
+      </p>
+   
+      <form action="/credits/<%=project._id%>"  method="post">
+      <label for="credits" style="font-size: 1.5rem">Choose credits:</label>
+      <select name="credits" id="credits">
+        <option value="10">10</option>
+        <option value="20">20</option>
+      </select>
+      <div class="col-12 text-center" style="margin-top: 20px;">
+        <table>
+            <tr>
+          <button class="btn" type="submit">Give Credits</button>
+        
+        </form>
+        <form  action="/creditsdelete/<%=project._id%>" method="post">
+         
+          <button style="margin-left: 10px;"class="btn" type="submit">Reject Request</button>
+        </form>
+      </tr>
+      </table>
+      </div>
+      
+    </div>
+   <!-- Project details ended -->
+
+
+   <!-- footer start -->
+   <div class="footer">
+    <p>Copyright &#169; 2021 Alute</p>
+</div>
+    
+    <!-- footer ended -->
+  </body>
+</html>

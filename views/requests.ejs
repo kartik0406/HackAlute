@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Applications</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Galdeano&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/assets/request.css">
+</head>
+<body>
+
+<!-- This is  start of the navbar -->
+<nav class="topnav"  >
+  <ul>
+    <li style="float:left"><a id="title" href="/">Alute Logo</a></li>
+    
+    <%  if(!user){%>
+    <li><a class="alig" href="/#contact">Go to your account</a></li>
+    <%  }else{ %>
+        <li> <a href="/userprofile"><img src="/<%= user.img.path %>" alt=""></a></li>
+        <li><a class="alig" href="/logout">Logout</a></li>
+ 
+  
+    <%  } %>
+    <li><a class="alig" href="/shop">Spend Credits</a></li>
+    
+    <li><a class="alig" href="/gallery">Explore</a></li>           
+    <li><a class="alig" href="/about">About</a></li>           
+    <li><a class="alig" href="/projects">Dashboard</a></li>
+    <li><a class="alig" href="/">Home</a></li>
+</ul>
+</nav>
+
+<!-- navbar end -->
+    
+    <!-- list of application of projects -->
+      <section>
+    
+      <div class="container topRow"  style="margin-top: 1rem;">
+        <div class="row">
+          <div class="col-3 text-center">
+            <p>Project Title</p>
+    
+          </div>
+          <div class="col-3 text-center">
+            <p class="created">Created By</p>
+          </div>
+          <div class="col-6 text-center">
+            <p>Status</p>
+          </div>
+        </div>
+      </div>
+      
+            <!-- request -->
+            <% var flag=0; temp=0%>
+            <%appliedprojects.forEach(function(project){%>
+              <%if(temp==0){%>
+              <div class="container gap" style="  background-color: rgb(242, 247, 237); color:#0d0744"  >
+                <%temp=1;%>
+              <%}else{%> 
+              <div class="container gap" style="background-color: rgb(181, 219, 171); color:rgb(46, 46, 46)">
+                <%temp=0;%>
+              <%}%>
+                <div class="row">
+                  <div class="col-3 text-center">
+              <p><%=project.title%></p>
+      
+            </div>
+            <div class="col-3 text-center">
+              <p class="created"><%=project.owner.username%></p>
+      
+            </div>
+            <div class="col-2 text-center">
+                <p class="created"><%project.team.forEach(function(member){ %>
+                  <% if(user._id.equals(member)){%>
+                  <% flag=1;%>
+                <%}});%>
+              <%if(flag===1){%>
+                You are in Team
+             <% }else{%>
+                 Pending...
+              <%}%></p>
+            </div>
+            <div class="col-2 text-center">
+              <form action="/request/<%=project._id%>/delete" method="post">
+                <%if(flag===1){%>
+                <button class="btn" type="submit">Leave Team</button>
+                <%}else{%>
+                <button class="btn" type="submit">Cancel Request</button>
+                <%}%>
+              </form>
+            </div>
+            <%if(flag===1){%>
+              <div class="col-2 text-center">
+              <form action="/credits/request/<%=project._id%>/<%=user.id%>" method="GET">
+                <button class="btn" type="submit">Apply for Credits</button>
+              </form>
+            </div> <% flag=0;}%>
+        </div>
+        </div>
+      <!-- request -->
+
+
+      <%})%>
+      
+
+
+      </section>
+
+
+       <!-- footer start -->
+       <div class="footer">
+        <p>Copyright &#169; 2021 Alute</p>
+        </div>
+        <!-- footer end -->
+     
+</body>
+</html>

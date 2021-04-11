@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post an Item</title>
+    <link rel="stylesheet" href="/public/assets/new.css">
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Galdeano&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+<body>
+
+    <nav class="topnav">
+    <ul>
+      <li style="float:left"><a id="title" href="/">Alute Logo</a></li>
+
+      <% if(!user){%>
+        <li><a class="alig" href="/#contact">Go to your account</a></li>
+        <% }else{ %>
+          <li> <a href="/userprofile"><img src="/<%= user.img.path %>" alt=""></a></li>
+          <li><a class="alig" href="/logout">Logout</a></li>
+
+
+          <% } %>
+            <li><a class="alig" href="/track">Track Credits</a></li>
+            <li><a class="alig" href="/post">Post social good</a></li>
+            <li><a class="alig" href="/admin">Dashboard</a></li>
+            <li><a class="alig" href="/">Home</a></li>
+    </ul>
+  </nav>
+   
+  <!-- project creation form -->
+<div class=" firstt-block">
+  <div class="card-title project-details">Post a new option</div>
+  <form action="/post" enctype="multipart/form-data" method="post" class="col s12 l12">
+          <div class="row">
+              <div  class="project-details col-md-3" style="display: block;">
+                <label>Title</label>
+              </div>
+              
+              <div class="col-md-4">
+                  <input type="text" placeholder="Title" name="title" required>
+              </div>
+              <div class="col-md-5"></div>
+          </div>
+          <div class="row">
+              <div class="col-md-3">
+                <label>Description</label>
+              </div>
+              
+              <div class="col-md-6">
+                  <textarea id="textarea1" placeholder="Description" value="" class="materialize-textarea" type="text" name="description" cols="10" rows="5" required ></textarea>
+
+              </div>
+              <div class="col-md-3"></div>
+          </div>
+          <br>
+          <div class="row">
+            <div  class="project-details col-md-3" style="display: block;">
+              <label>Sponsors' swags</label>
+            </div>
+            
+            <div class="col-md-6">
+                <input type="text" placeholder="Enter swags" name="swag" required>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+          <div class="row"> 
+              <div class="col-md-3">
+                <label>Upload a title image</label>
+              </div>
+              <div class="col-md-6">
+                <input type="file" name="myImage" accept="image/*" required/>
+              </div>
+              <div class="col-md-3"></div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-3">
+                <label>Credits</label>
+              </div>
+              <div class="col-md-2">
+                <input type="number" name="credits" required>
+              </div>
+              <div class="col-md-7"></div>
+            </div>
+         
+          <div class="row">
+              <div class="col-md-3">
+                <label>Alutoze awarded</label>
+              </div>
+              <div class="col-md-2">
+                <input type="number" name="alutoze" required>
+              </div>
+              <div class="col-md-7"></div>
+            </div>
+          <br>
+          <div class="text-center">
+            <button type="submit" class="waves-effect waves-light black lighten-5 white-text center">Post</button>
+          </div>
+    </form>
+  </div>
+</body>
+</html>

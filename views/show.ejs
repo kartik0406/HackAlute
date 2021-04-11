@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Details</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Galdeano&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/assets/show.css" />
+  </head>
+  <body>
+
+    <!-- This is  start of the navbar -->
+     <nav class="topnav"  >
+        <ul>
+          <li style="float:left"><a id="title" href="/">Alute Logo</a></li>
+          
+          <%  if(!user){%>
+          <li><a class="alig" href="/#contact">Go to your account</a></li>
+          <%  }else{ %>
+              <li> <a href="/userprofile"><img src="/<%= user.img.path %>" alt=""></a></li>
+              <li><a class="alig" href="/logout">Logout</a></li>
+       
+        
+          <%  } %>
+          <li><a class="alig" href="#contact">Spend credits</a></li>
+          <li><a class="alig" href="/#explore">Explore</a></li>           
+          <li><a class="alig" href="/">About</a></li>
+          <li><a class="alig" href="/projects">Dashboard</a></li>
+          <li><a class="alig" href="/">Home</a></li>
+      </ul>
+    </nav>
+    <!-- navbar end -->
+
+  <br>
+    <h1>Project Details</h1>
+
+    <div class="text-center container">
+      <h2><strong>
+        <%=project.title%>
+        <h3>
+          <small><i>by <%=project.owner.username%></i></small>
+        </h3>
+      </strong></h2>
+      <br>
+      <h2><strong>Description</strong></h2>
+      <p>
+        <%=project.descrip%>
+      </p>
+      <br>
+      <h2><strong>Technologies Used</strong></h2>
+      <p>
+        <%=project.technologies%>
+      </p>
+      <h2><strong>Skills need</strong></h2>
+      <p>
+        <%=project.skills%>
+      </p>
+   
+      <h2><strong>Team Requirement</strong></h2>
+      <p>
+        <span>Maximum members:<%=project.max%></span><span class="need"> Members need:<%=project.need%></span>
+      </p>
+      
+      <div class="apply">
+        <form action="/request/<%=project._id%>" method="post">
+          <% if(user){%>
+          <button class="btn" type="submit">APPLY</button>
+        </form>
+        <%}else{%>
+          <a href="/login" class="btn">APPLY</a>
+          <%}%>
+      </div>
+    </div>
+   <!-- Project details ended -->
+
+
+   <!-- footer start -->
+   <div class="footer">
+    <p>Copyright &#169; 2021 Alute</p>
+</div>
+    
+    <!-- footer ended -->
+  </body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x: hidden;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Credits</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Galdeano&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/assets/request.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- This is  start of the navbar -->
+    <nav class="topnav"  >
+      <ul>
+        <li style="float:left"><a id="title" href="/">Alute Logo</a></li>
+        
+        <%  if(!user){%>
+        <li><a class="alig" href="/#contact">Go to your account</a></li>
+        <%  }else{ %>
+            <li> <a href="/userprofile"><img src="/<%= user.img.path %>" alt=""></a></li>
+            <li><a class="alig" href="/logout">Logout</a></li>
+     
+      
+        <%  } %>
+        <li><a class="alig" href="/track">Track Credits</a></li>
+        <li><a class="alig" href="/post">Post social good</a></li>     
+        <li><a class="alig" href="/admin">Admin Dashboard</a></li>
+        <li><a class="alig" href="/">Home</a></li>
+    </ul>
+    </nav>
+    <!-- navbar end -->
+
+     <!-- List of people requested to your project -->
+     <section>
+      <div class="container" style="margin-top: 1rem;">
+        <div class="row">
+          <div class="col-3 text-center">
+            <p>User</p>
+    
+          </div>
+          <div class="col-3 text-center">
+            <p class="created">Credits Spent</p>
+    
+          </div>
+          <div class="col-6 text-center">
+            <p>Give Details</p>
+    
+          </div>
+    
+          </div>
+      </div>
+    
+      
+            <!-- request -->
+            <%var temp=0%>
+            <%console.log(applications); applications.forEach(function(application){%>
+              <%if(temp==0){%>
+                <div class="container gap" style="background-color: rgb(242, 247, 237); color:rgb(51, 51, 51)"  >
+                  <%temp=1;%>
+                <%}else{%> 
+                  <div class="container gap" style="background-color: rgb(181, 219, 171);color:#0d0744 "  >
+                <%temp=0;%>
+              <%}%>
+                <div class="row">
+                  <div class="col-3 text-center">
+            <p><%=application.name%></p>
+      
+            </div>
+            <div class="col-3 text-center">
+          <p  class="created"><%=application.spent%></p>
+      
+            </div>
+            <div class="col-3 text-center">
+             <p class="created"><%=application.itemname%></p>
+      
+            </div>
+            <div class="col-3 text-center"></div>
+            <div class="col-6 text-center"></div>
+            <div class="col-6 text-center">
+                <table>
+                    <tr>
+                      
+           
+            <form action="/track/<%=application._id%>" method="POST">
+
+            <input style="height:50px;width: 300px;" name="notify" type="text" value="<%=application.details%>">
+           <a  style="margin-left:2rem;text-decoration: none; color:white"><button type="submit" class="btn">Submit Response</button></a>
+            </form>
+             
+             </tr>
+            </table>
+          
+             
+            </div>
+            </div>
+        </div>
+           <!-- request -->
+                 
+    
+           <%})%>
+         
+          
+        
+      </section>
+
+    <!-- List ended -->
+
+
+      
+ 
+
+
+
+
+
+      <!-- footer start -->
+      <div class="footer">
+        <p>Copyright &#169; 2021 Alute</p>
+    </div>
+        
+    <!-- footer ended -->
+
+    
+</body>
+</html>

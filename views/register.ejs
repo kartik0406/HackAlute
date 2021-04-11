@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Galdeano&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/assets/register.css">
+</head>
+<body>
+
+    <!-- This is  start of the navbar -->
+   <nav class="topnav"  >
+        <ul>
+          <li style="float:left"><a id="title" href="/">Alute Logo</a></li>
+          
+          <%  if(!user){%>
+          <li><a class="alig" href="/#contact">Go to your account</a></li>
+          <%  }else{ %>
+              <li> <a href="/userprofile"><img src="/<%= user.img.path %>" alt=""></a></li>
+              <li><a class="alig" href="/logout">Logout</a></li>
+       
+        
+          <%  } %>
+          <li><a class="alig" href="#contact">Contact</a></li>
+          
+          <li><a class="alig" href="/#explore">Explore</a></li>           
+          <li><a class="alig" href="/#features">Features</a></li>
+          <li><a class="alig" href="/projects">Dashboard</a></li>
+          <li><a class="alig" href="/">Home</a></li>
+      </ul>
+    </nav>
+
+
+   <!-- Registration form start -->
+  <div class="first-block">  
+    <table>
+      <div class="topic text-center"> Just fill in some details and get started in no time!</div>
+        <tr>
+          <td>
+            <div>
+        <hr>
+              <form action="/register" method="POST" enctype="multipart/form-data" id="registerForm">
+                <div>
+                  <h5 id="msg" style="color: red; align-content: center;"></h5>
+                </div>
+       
+                <div class="form-group">
+                  <input type="email" class="form-control" id="inputEmail4" name="username" placeholder="Email ID*" required/>
+                </div>
+                <hr>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="inputEmail4" name="email" placeholder="Name*" required/>
+                </div>
+                <hr>
+                <div class="form-group gap">
+                  <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password*" required/>
+                </div>
+               <hr>
+
+               <div class="form-group  gap">
+                <input type="text" class="form-control" id="inputInstitute" name="institute" placeholder="Institute*" required/>
+              </div>
+              <hr>
+              
+              <div class="form-group  gap">
+                <input type="text" class="form-control" id="about" name="about" placeholder="Tell us a line about yourself*" required/>
+              </div>
+              <hr>
+
+              <div class="form-group  gap">
+                <label>Upload your profile photo*</label>
+                <input type="file" name="myImage" accept="image/*"/>
+              </div>
+             
+              <hr>
+              <div class="form-group  gap">
+                <input type="text" class="form-control" id="skills" name="skills"
+                  placeholder="Enter your skills(domains) / Langages (Comma separated)" />
+              </div>
+              <hr>
+
+              <div class="form-group  gap">
+                <input type="text" class="form-control" id="inputLanguages" name="language"
+                  placeholder="Favourite Programming Language(s) (Comma separated)" />
+              </div>
+              <hr>
+              <div class="form-group  gap">
+                <input type="text" class="form-control" id="githublink" name="github"
+                  placeholder="Github Link" />
+              </div>
+              <hr>
+              <div class="form-group gap">
+                <input type="text" class="form-control" id="linkedinLink" name="linkedIn"
+                  placeholder="LinkedIn Link" />
+              </div>
+              <hr>
+            
+                <div>
+                  &nbsp;&nbsp;
+                  <button id="registerbtn" class="btn">Register</button>
+                  
+                </div>
+              </form>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+   
+      <div class="footer">
+        <p>Copyright &#169; 2021 Alute</p>
+    </div>
+    <!-- footer ended -->
+</body>
+</html>

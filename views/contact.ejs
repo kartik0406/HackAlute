@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/public/assets/contact.css">
+</head>
+<body>
+
+   <!-- This is  start of the navbar -->
+   <div class="topnav">
+	<a id="title" href="/">VIT Pro Bud</a>
+	<a class="alig" href="/projects">Explore</a>
+	<a class="alig" href="/about">About</a>
+	<a class="alig" href="/contact">Contact</a>
+	<a class="alig" href="/gallery">Gallery</a>
+	<%  if(!user){%>
+	<a class="alig" href="/register">Register</a>
+	<a class="alig" href="/login">Login</a>
+	<%  }else{ %>
+		<a class="alig" href="/logout">Logout</a>
+ 
+	<a href="/userprofile"><img src="/<%= user.img.path %>" alt=""></a>
+	<%  } %>
+</div>
+  <!-- navbar end -->
+
+	  <!-- contact form start -->
+    <div class="full">
+		
+		<div class="Contact-Form">
+			<h1> Contact Us</h1>
+			<h3></h3>
+			<form action="">
+			<div class="input-fields">
+				<input type="text" class="input" placeholder="Your Name *"  required>
+				<input required type="text" class="input" placeholder="Your Emaill *">
+				<input required type="text" class="input" placeholder="Your Phone *">
+				
+			</div>
+			<div class="msg">
+				<textarea required placeholder="Message *"></textarea>
+				
+			</div>
+			<div>
+				<button type="submit"> Send message</button>
+			</div>
+		</form>	
+			<div class="details">
+				<h3> Contact info </h3>
+				<p> E-mail: kartikkhanna2000@gmail.com</p>
+				<p> Mobile: +918707046701</p>
+				<p> web: github.com/kartik0406 </p>
+                <p></p>
+			</div>
+			<div class="details"> 
+				<h3> Working hours: 9am-6pm </h3>
+				<p> E-mail: kartikkhanna1000@gmail.com</p>
+				<p> Mobile: +918707046701 </p>
+				<p> web: pevel.me </p>
+                <p></p>
+			</div>	
+				
+		</div>	
+	</div>
+	<!-- contact form ended -->
+
+	<!-- footer start -->
+    <div class="footer">
+        <p>Copyright &#169; 2021 Kartik Khanna</p>
+    </div>
+  <!-- footer end -->
+
+</body>
+</html>

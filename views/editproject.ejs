@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x: hidden;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Project</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Galdeano&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/assets/project.css">
+    <link rel="stylesheet" href="/public/assets/editproject.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- This is  start of the navbar -->
+    <nav class="topnav"  >
+      <ul>
+        <li style="float:left"><a id="title" href="/">Alute Logo</a></li>
+        
+        <%  if(!user){%>
+        <li><a class="alig" href="/#contact">Go to your account</a></li>
+        <%  }else{ %>
+            <li> <a href="/userprofile"><img src="/<%= user.img.path %>" alt=""></a></li>
+            <li><a class="alig" href="/logout">Logout</a></li>
+     
+      
+        <%  } %>
+        <li><a class="alig" href="#contact">Spend credits</a></li>
+        
+        <li><a class="alig" href="/#explore">Explore</a></li>           
+        <li><a class="alig" href="/">About</a></li>
+        <li><a class="alig" href="/projects">Dashboard</a></li>
+        <li><a class="alig" href="/">Home</a></li>
+    </ul>
+  </nav>
+    <!-- navbar end -->
+
+    <!-- owner project list -->
+      <div class="row">
+
+        <%userprojects.projects.forEach(function(project){%>
+        <div class="column">
+          <a class="link" href="/projects/<%=project.id%>"><div class="card">
+            <h2><%=project.title%></h2>
+            <br>
+            <h5>This project was created by you!</h5>
+            <div class="task row">
+                <div class=" text-center col-sm-6"><a class="btn " href="/projects/editproject/<%=project.id%>">Edit</a></div>
+                <form action="/projects/editproject/delete/<%=project.id%>?_method=DELETE" method="POST">
+                <div class=" text-center col-sm-6"><a href=""><button class="btn delete" type="submit">Delete</button></a></div>
+              </form>
+            </div>
+          </div>
+        </div></a>
+        <%});%>
+  
+    
+     
+  
+       
+      
+  
+      
+
+
+      </div>
+       <!-- project list ended -->
+
+
+      <!-- footer start -->
+      <div class="footer">
+        <p>Copyright &#169; 2021 Kartik Khanna</p>
+    </div>
+    <!-- footer ended -->
+</body>
+</html>
