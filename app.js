@@ -745,21 +745,148 @@ app.post("/creditsdelete/:id",function(req,res){
 
 
 
+app.get("/post", middleware.isLoggedIn, function (req, res) {
+  if (req.user.username.toLowerCase() === "kartikkhanna2000@gmail.com") {
+    
+        res.render("post", { user: req.user });
+     
+    
+  }
+});
+app.post("/post",middleware.isLoggedIn,upload.single('myImage'),function(req,res){
+
+  var img = fs.readFileSync(req.file.path);
+    var encode_image = img.toString('base64');          
+    var finalImg = {                                    // Define a JSONobject for the image attributes for saving to database
+        contentType: req.file.mimetype,
+        path:req.file.path,
+        image:  new Buffer(encode_image, 'base64')
+    };
+   
+  const title=req.body.title;
+  const descrip=req.body.description;
+  const credits=req.body.credits;
 
 
+ let newItem = new Item({
+ title:title,
+ description:descrip,
+ swag:req.body.swag,
+ credits:credits,
+ alutoze:req.body.alutoze,
+ img:finalImg
+});
+newItem.save();
+res.redirect("/shop")
+});
 
 
+app.get("/shop",middleware.isLoggedIn,function(req,res){
+
+  Item.find({},function(err,foundItems){
+    if(err){
+      console.log(err);
+    }
+    else{
+      res.render("shop",{user:req.user,items:foundItems});
+    }
+  })
+ 
+});
+
+app.post("/shop/:id",middleware.isLoggedIn,function(req,res){
+  const id = req.params.id;
+  console.log(id);
+  Item.findById(id,function(err,foundItem){
+    if(err){
+      console.log(err);
+    }
+    else{
+      console.log(foundItem);
+      User.findById(req.user._id,function(err,foundUser){
+        if(err){
+          console.log(err);
+        }
+        else{
+          if(foundUser.credits>=foundItem.credits){
+          foundUser.credits-=foundItem.credits;
+          let data={
+            itemname:foundItem.title,
+            spent:foundItem.credits,
+            details:"We will send you details once your contribution is received",
+            name:req.user.email
+
+          }
+          foundUser.history.push(data);
+          
+            foundUser.xp+=foundItem.alutoze;
+        
+         
+          foundUser.save();
+          }
+        }
+      })
+    }
+  })
+  setTimeout(function(){res.redirect("/shop");},7000);
+});
+
+app.get("/orderHistory",middleware.isLoggedIn,function(req,res){
+  
+  User.findById(req.user._id,function(err,foundUser){
+    if(err){
+      console.log(err);
+    }
+    else{
+      res.render("transactions",{user:req.user,transactions:foundUser.history});
+    }
+  })
+})
 
 
+app.get("/track",middleware.isLoggedIn,function(req,res){
+  
+    User.find({},function(err,foundUser){
+      if(err){
+        console.log(err);
+      
+      }
+      else{
+        foundUser.forEach(function(user){
+          if(user.history.length!=0)
+          res.render("track",{user:req.user,applications:user.history});
+        })
+       
+       
+        
+      }
+    })
+  
+})
 
+app.post("/track/:id",function(req,res){
+  const id=req.params.id;
+  const notify=req.body.notify;
+  let userId;
+  User.find({},function(err,foundUser){
+    if(err){
+      console.log(err);
+    }
+    else{
+       foundUser.forEach(function(foundaUser){
+         foundaUser.history.forEach(function(hid){
+      if(hid._id==id){
+        hid.details=notify;
+      }
 
+    })
+     foundaUser.save();
+    })
+    }
+  })
 
-
-
-
-
-
-
+  res.redirect("/track");
+})
 
 
 let port = process.env.PORT;
