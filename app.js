@@ -79,6 +79,7 @@ app.get("/projects", function (req, res) {
 
   
 });
+
 app.post("/result",middleware.isLoggedIn,function(req,res){
 
   Project.find({}, function (err, allProjects) {
@@ -143,6 +144,7 @@ app.post("/result",middleware.isLoggedIn,function(req,res){
 });
   
 })
+
 
 
 app.get("/projects/new", middleware.isLoggedIn, function (req, res) {
@@ -405,7 +407,6 @@ app.delete(
   }
 );
 
-
 app.get("/showgotrequest", middleware.isLoggedIn, function (req, res) {
 
 
@@ -585,6 +586,7 @@ app.post("/request/:id/delete", middleware.isLoggedIn, function (req, res) {
   });
 });
 
+
 app.get("/credits/request/:projectId/:userId",middleware.isLoggedIn,function(req,res){
           const projectId=req.params.projectId;
           const userId=req.params.userId;
@@ -743,8 +745,6 @@ app.post("/creditsdelete/:id",function(req,res){
  
 })
 
-
-
 app.get("/post", middleware.isLoggedIn, function (req, res) {
   if (req.user.username.toLowerCase() === "kartikkhanna2000@gmail.com") {
     
@@ -845,7 +845,7 @@ app.get("/orderHistory",middleware.isLoggedIn,function(req,res){
 
 
 app.get("/track",middleware.isLoggedIn,function(req,res){
-  
+   var arr_push=[]
     User.find({},function(err,foundUser){
       if(err){
         console.log(err);
@@ -854,13 +854,18 @@ app.get("/track",middleware.isLoggedIn,function(req,res){
       else{
         foundUser.forEach(function(user){
           if(user.history.length!=0)
-          res.render("track",{user:req.user,applications:user.history});
+          arr_push.push(user.history);
+      
+          
+        
         })
-       
-       
+      
+        res.render("track",{user:req.user,applications:arr_push});
         
       }
     })
+   
+ 
   
 })
 
