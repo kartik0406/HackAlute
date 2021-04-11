@@ -76,7 +76,7 @@ For using this project:
 - Now open the folder with terminal.
 - Run commands: npm install nodemon app.js
 - The server started locally at the port shown on terminal.
-- To run ML/DL models, create a python virtual env in anaconda prompt and install: scikit-learn, Tensorflow, Pandas, Numpy, NLTK, Jupyter Notebook via pip install or conda   install. Launch the notebook and run and train the models!
+- To run ML/DL models, create a conda virtual env in anaconda prompt and install: scikit-learn, Tensorflow, Pandas, Numpy, NLTK, Jupyter Notebook via pip install or conda   install. Launch the notebook and run and train the models!
 
 
 ### Screenshots
