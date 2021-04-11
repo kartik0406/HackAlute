@@ -79,11 +79,10 @@ For using this project:
 - To run ML/DL models, create a conda virtual env in anaconda prompt and install: scikit-learn, Tensorflow, Pandas, Numpy, NLTK, Jupyter Notebook via pip install or conda   install. Launch the notebook and run and train the models!
 
 
-### Screenshots
-![](https://github.com/Harsh-1309/HackAlute/blob/main/image1.PNG)
-![](https://github.com/Harsh-1309/HackAlute/blob/main/image2.PNG)
-![](https://github.com/Harsh-1309/HackAlute/blob/main/image3.PNG)
-![](https://github.com/Harsh-1309/HackAlute/blob/main/image4.PNG)
-![](https://github.com/Harsh-1309/HackAlute/blob/main/image5.PNG)
-![](https://github.com/Harsh-1309/HackAlute/blob/main/image6.PNG)
+### Demo Link:
+https://www.youtube.com/watch?v=-dVpMo8bU14
+
+### Detailed View of Project:
+https://bit.ly/3uy9K7o
+
 
