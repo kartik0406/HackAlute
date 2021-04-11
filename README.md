@@ -85,4 +85,19 @@ https://www.youtube.com/watch?v=KZMWRGVu9mk
 ### Detailed View of Project:
 https://bit.ly/3uy9K7o
 
+## Screenshots
+
+![](https://github.com/Akriti2701/SheHack/blob/main/Screenshots/f1.PNG)
+![](https://github.com/Akriti2701/SheHack/blob/main/Screenshots/f2.PNG)
+![](https://github.com/Akriti2701/SheHack/blob/main/Screenshots/f3.PNG)
+![](https://github.com/Akriti2701/SheHack/blob/main/Screenshots/f4.PNG)
+![](https://github.com/Akriti2701/SheHack/blob/main/Screenshots/f5.PNG)
+![](https://github.com/Akriti2701/SheHack/blob/main/Screenshots/f6.PNG)
+![](https://github.com/Akriti2701/SheHack/blob/main/Screenshots/f7.PNG)
+![](https://github.com/Akriti2701/SheHack/blob/main/Screenshots/f8.PNG)
+![](https://github.com/Akriti2701/SheHack/blob/main/Screenshots/f9.PNG)
+![](https://github.com/Akriti2701/SheHack/blob/main/Screenshots/f10.PNG)
+![](https://github.com/Akriti2701/SheHack/blob/main/Screenshots/f11.PNG)
+![](https://github.com/Akriti2701/SheHack/blob/main/Screenshots/f12.PNG)
+![](https://github.com/Akriti2701/SheHack/blob/main/Screenshots/f13.PNG)
 
