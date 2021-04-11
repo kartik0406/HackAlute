@@ -1,0 +1,253 @@
+html
+{
+scroll-behavior: smooth;
+}
+
+body 
+{
+    margin: 0 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
+
+}
+
+.row{
+  margin:auto 0px!important;
+}
+
+.first-block
+{
+    background-image: url("/public/images/bg.png");
+    background-size: cover;
+    height: 100vh;
+    width: 100%
+} 
+
+.topnav 
+{
+    position: fixed;
+    width: 100%;
+    background: rgb(0,0,0,0.2);
+    border-radius: 0px;
+    padding:1%;
+    height: 80px;
+}
+.topnav img{
+
+    
+    
+    width: 60px;
+  }
+
+.topnav a:hover 
+{
+    font-weight: bold;
+    text-decoration: none;
+    color: white
+}
+
+ul
+{
+    margin: 5px;
+    padding-left: 10px;
+    padding-right: 15px
+}
+
+li
+{
+    list-style: none;
+    float: right;
+    padding:0 1%;
+}
+
+li a 
+{
+    font-size: 30px;
+    text-decoration: none;
+    font-family: Galdeano;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 48px;
+    text-align: justify;
+    color: white;
+}
+ 
+#title
+{
+    text-align: center;
+    font-weight: 600;
+}
+
+#top-content
+{
+    position: absolute;
+    height: 492px;
+    left: 54.93%;
+    right: 6.02%;
+    line-height: 2rem;
+    top: 30vh;
+    font-family: Galdeano;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2rem;
+    text-align: justify;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+#top-image
+{
+    position: absolute;
+    height: 60vh;
+    width: 120vh;
+    left: 96px;
+    top: 25vh;
+    opacity: 0.35;
+    border-radius: 55px 0px;
+}
+
+.second-block
+{
+    background-image: url("/public/images/bg2.png");
+    background-size: cover;
+    height: 100vh;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card .btn{
+    position:absolute;
+    margin-top:20px;
+    bottom:0;
+    width: auto;
+  }
+.topic{
+    width: 100%;
+    margin:auto;
+    margin-bottom: 30px;
+    font-family: Galdeano;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 3rem;
+    text-align: justify;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+ .benefits{
+    margin:30px 10vw;
+    color:white;
+    font-weight: 400;
+    font-family: Galdeano;
+    font-size:1.6rem;
+ }
+
+#gallery:hover{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+ #contact{
+    /*background-image: url('https://wpamelia.com/wp-content/uploads/2019/02/4k-wallpaper-architecture-background-1308624.jpg'); */
+     color: white;
+    padding-top: 15vh; 
+    padding-bottom:8vh;
+    font-size : 18px;
+}
+.goToAcc{
+    height : auto; 
+    padding: 30px 10px 5px 10px; 
+    border-radius : 20px; 
+    background-color: white; 
+    color : black
+}
+
+.goToAcc div{
+    text-align : center; 
+    margin-bottom: 30px
+}
+
+.goToAcc .signUp-btn{
+    width : 90%;
+    border-radius : 40px;
+    padding: 10px; 
+    background-color: rgb(47, 161, 186); 
+    color: white;
+    font-size: 1.1rem;
+    outline: none;
+    border:none;
+}
+.goToAcc .signUp-btn:hover{
+    font-weight: bold}
+
+.motto{
+    color:white;
+    margin-top : 20px; 
+    color : grey;
+    font-size: 1.5rem; 
+    font-family: Galdeano;
+}
+
+.shadow a{
+    color:white;
+}
+
+.shadow a:hover{
+    color:white;
+    text-decoration: none;
+    font-weight: bold
+}
+
+.contactDetail{
+    margin-top : 110px;
+    text-align: center;
+}
+
+.contactDetail a{
+  text-decoration: none;
+  color: white;
+}
+
+.contactDetail a:hover{
+  text-decoration: none;
+  color: white;
+  color:rgba(255,255,255,0.5);
+}
+
+.social
+{
+    width: 2.5vw;
+    height: 2.5vw;
+    margin: 0 0.3%;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: (0,0,0,0);
+    color: black;
+    text-align: center;
+    font-weight: bolder;
+    color:white;
+ }
+ #toabout{
+    outline:none;
+    background-color: rgb(47, 161, 186); 
+    color:white;
+    border-radius: 10px; 
+    font-size:  1.2rem;
+    border: none;
+    padding: 10px; 
+    font-family:  Galdeano;
+    margin-bottom: 10px;
+ }
+ #toabout:hover{
+    font-weight:bold;
+ }

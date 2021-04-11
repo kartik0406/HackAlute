@@ -1,0 +1,160 @@
+html
+{
+scroll-behavior: smooth;
+}
+
+body 
+{
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
+
+}
+
+
+.row{
+  margin:auto 0px!important;
+}
+
+
+.topnav 
+{
+    width: 100%;
+    background-image:url("/public/images/bg.png");
+    background-size: cover;
+    border-radius: 0px;
+    padding:1%;
+    height: 80px;
+}
+.topnav img{
+
+    width: 60px;
+    margin-bottom: 20rem;
+  }
+
+.topnav a:hover 
+{
+    font-weight: bold;
+    text-decoration: none;
+    color: white
+}
+
+ul
+{
+    margin: 5px;
+    padding-left: 10px;
+    padding-right: 15px
+}
+
+li
+{
+    list-style: none;
+    float: right;
+    padding:0 1%;
+}
+
+li a 
+{
+    font-size: 30px;
+    text-decoration: none;
+    font-family: Galdeano;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 48px;
+    text-align: justify;
+    color:white
+}
+ 
+#title
+{
+    text-align: center;
+    font-weight: 600;
+}
+
+#top-content
+{
+    position: absolute;
+    height: 492px;
+    left: 54.93%;
+    right: 6.02%;
+    line-height: 2rem;
+    top: 30vh;
+    font-family: Galdeano;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5rem;
+    text-align: justify;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: (0,0,0,0);
+  text-align: center;
+  font-weight: bolder;
+  color:#0d0744;
+}
+
+.container img{
+  width:180px;
+  float:left;
+  margin-top: 55px;
+}
+.col-9{
+
+  margin-top: 50px;
+}
+.list-group-item{
+  font-weight: bolder;
+}
+.col-9 li{
+  background-image:url("/public/images/bg.png");
+  opacity: 1;
+    background-size: cover;
+  float:left;
+  
+  font-size: 25px;
+  color:#ffffff;
+}
+.col-9 li.name{
+  font-size: 30px;
+  color: #0d0744;
+}
+.col-9 li a{
+  font-weight: bolder;
+  font-size:25px;
+  color:#0d0744;
+  text-decoration: none;
+}
+
+.col-9 li a:hover{
+  color: #0d5b9b;
+}
+ .box
+ {
+ background-color:#0d0744;
+ color:white;
+ padding-left:5px;
+ padding-right:5px;
+ padding-top:15px;
+ padding-bottom:15px;
+ width:200px;
+ text-align:center;
+ float:left;
+ font-size:14px;
+ margin-left: 0;
+ margin-right: 2rem;
+ }
+
+ .box:hover{
+     color: #ffffff;
+     background-color: #080427;
+     
+ }
+
+

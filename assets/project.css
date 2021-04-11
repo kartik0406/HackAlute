@@ -1,0 +1,174 @@
+html
+{
+scroll-behavior: smooth;
+}
+
+body 
+{
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
+
+}
+
+
+
+.first-block
+{
+    background-image: url("/public/images/bg.png");
+    background-size: cover;
+    height: 100vh;
+    width: 100%
+} 
+
+.topnav 
+{
+    width: 100%;
+    background-image:url("/public/images/bg.png");
+    background-size: cover;
+    border-radius: 0px;
+    padding:1%;
+    height: 80px;
+}
+.topnav img{
+
+    
+    
+    width: 60px;
+  }
+
+.topnav a:hover 
+{
+    font-weight: bold;
+    text-decoration: none;
+    color: white
+}
+
+ul
+{
+    margin: 5px;
+    padding-left: 10px;
+    padding-right: 15px
+}
+
+li
+{
+    list-style: none;
+    float: right;
+    padding:0 1%;
+}
+
+li a 
+{
+    font-size: 30px;
+    text-decoration: none;
+    font-family: Galdeano;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 48px;
+    text-align: justify;
+    color:white
+}
+ 
+#title
+{
+    text-align: center;
+    font-weight: 600;
+}
+
+.box{
+    margin-top:100px;
+}
+.row{
+  margin: 50px 10px!important;
+}
+.box p{
+      font-size: 30px;
+      font-family: 'Cinzel'
+  }
+   
+     .create{
+        text-decoration: none;
+        border-radius: 15px;
+        margin-top: 10px;
+        background-color: #0d0744;
+        color: #ffffff;
+        padding: 12px 20px;
+        font-size: 1.8rem
+        
+
+    }
+    .box a:hover{
+        text-decoration: none;
+        font-weight: bold;
+        color: white;
+    }
+    @keyframes button {
+        from {margin-left: 0%;}
+        to {margin-left: 70%;}
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      
+    
+      
+      /* Float four columns side by side */
+      .column {
+        float: left;
+        width: 33%;
+        padding: 0 10px;
+        margin-top: 20px;
+      }
+      
+      
+      /* Style the counter cards */
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 10px 30px;
+        /*background-image: url("/public/images/bg.png");*/
+        background-color: rgb(242, 247, 237);
+        
+        color:#0d0744;
+        margin-bottom: 15px;
+        border-radius: 20px;
+        height: 350px;
+
+      }
+      .card p{
+        font-family: 'Cinzel';
+        font-size: 20px;
+        color:black;
+      }
+      .card p a{
+          color: black;
+      }
+      .want{
+          margin-left: 40px;
+      }
+      .card:hover{
+          background-color: #fcfcfc;
+          box-shadow:2px 2px 2px 2px #c4c4c4;
+      }
+      .card a.link{
+        text-decoration: none;
+        color:#0d0744
+      }
+
+
+
+
+
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: (0,0,0,0);
+    color: black;
+    text-align: center;
+    font-weight: bolder;
+    color: #0d0744
+ }
