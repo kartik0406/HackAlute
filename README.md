@@ -80,7 +80,7 @@ For using this project:
 
 
 ### Demo Link:
-https://www.youtube.com/watch?v=-dVpMo8bU14
+https://www.youtube.com/watch?v=KZMWRGVu9mk
 
 ### Detailed View of Project:
 https://bit.ly/3uy9K7o
