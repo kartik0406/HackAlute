@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    <link rel="stylesheet" href="/public/assets/about.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Galdeano&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  <body> 
+   <div class="first-block">
+      <nav class="topnav">
+          <ul>
+              <li style="float:left"><a id="title" href="/">Alute Logo</a></li>
+              
+              <%  if(!user){%>
+              <li><a class="alig" href="#contact">Go to your account</a></li>
+              <%  }else{ %>
+                  <li> <a href="/userprofile"><img src="/<%= user.img.path %>" alt=""></a></li>
+                  <li><a class="alig" href="/logout">Logout</a></li>
+           
+            
+              <%  } %>
+                 <li><a class="alig" href="/projects">Dashboard</a></li>
+              <li><a class="alig" href="#contact">Contact</a></li>
+              
+              <li><a class="alig" href="#explore">Explore</a></li>           
+              <li><a class="alig" href="#features">Features</a></li>
+           
+              <li><a class="alig" href="/">Home</a></li>
+          </ul>
+      </nav>
+      
+      <div class="container">
+        <div class="topic text-center" style="padding-top:100px">
+           Walkthrough the website
+        </div>
+        <div class="row ">
+           <iframe
+            width="360"
+            height="315"
+            style="margin: auto"
+            src="https://www.youtube.com/embed/AyHjhry0aPc"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; muted "
+            allowfullscreen 
+          ></iframe>   
+        </div>
+        <div class="topic text-center" style="padding-top:40px">
+            Meet your Admins
+        </div>
+         <div class="row" style="padding-top: 40px;">
+               
+                  <div class="image col-md-5 text-center" >
+                    <img src="/public/images/dp.png" alt="Srishti" style="width: 300px">
+                      
+                  </div>
+                   <div class="content col-md-6">
+                    <h2>Srishti Lodha</h2>
+                    <h5>srishtilodha2000@gmail.com</h5>
+                    <br>
+                    One who started off Web Dev just for an additional skill until today when its both her passion and area of expertise, Srishti has come a long way before working on this amazing startup. Your first admin who has not just played a crucial role in developing and managing Alute, but will also guide you in Web domain.
+                  </div>
+                  <div class="col-md-1"></div>
+              
+            </div>
+      </div>
+    </div>
+        <div class="second-block">
+             
+            <div class="row" style="padding-top: 150px; text-align: right;">
+                  <div class="col-md-1"></div>
+                  <div class="content col-md-6">
+                    <h2>Kartik Khanna</h2>
+                    <h5>kartikkhanna2000@gmail.com</h5>
+                    <br>
+                    Kartik has always wanted to use his knowledge in Web Developement to create something big - and here he is, as the other web developer of Alute. Meet your second admin, who is all set to evaluate and support you throughout your dev journey. 
+                  </div>
+                  
+                  <div class="image col-md-5 text-center" >
+                    <img src="/public/images/kartik.jpg" alt="Kartik" style="width: 300px">
+                      
+                  </div>
+                   
+              
+            </div>
+            <div class="row" style="padding-top: 40px">
+               
+                  <div class="image col-md-5 text-center" >
+                    <img src="/public/images/harsh.jpeg" alt="Srishti" style="width: 300px">
+                      
+                  </div>
+                   <div class="content col-md-6">
+                    <h2>Harsh Malani</h2>
+                    <h5>harsh13092001@gmail.com</h5>
+                    <br>
+                    Did you chat with the teeny tiny bot yet at the bottom right corner of Alute?!<br>
+                    The one who started off with Machine Learning just because he found it cool, and now with years of experience with it, he is all set for the AI revolution. Coz, AI is the future. Your third admin has everything you will need for some amazing ML projects, from ideating to implementing to mentoring!
+
+                  </div>
+                  <div class="col-md-1"></div>
+              
+            </div>
+            
+              
+      </div>
+        
+      <div class="first-block">
+        <div class="topic text-center">
+           Meet your sponsors
+
+        </div>
+        <div class="row" style="padding-top: 20px">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3 text-center d-flex justify-content-center">
+            <div class="card" style="width: 15rem;">
+              <img  src="/public/images/comp1.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Angel Company</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 text-center d-flex justify-content-center">
+            <div class="card" style="width: 15rem;">
+              <img style="padding-top: 35px; padding-bottom: 20px" src="/public/images/comp3.png" class="card-img-top"  alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Sponsor 101</h5>
+                
+              </div>
+            </div>
+        </div>
+        <div class="col-lg-3 text-center d-flex justify-content-center">
+            <div class="card" style="padding-top:35px;width: 15rem;">
+              <img src="public/images/comp2.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title" style="padding-top:15px">We Spons.com</h5>
+               
+              </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <br>
+    <div class="row" style="padding-top: 20px">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3 text-center d-flex justify-content-center">
+            <div class="card" style="width: 15rem;">
+              <img  src="/public/images/comp4.png" class="card-img-top" alt="...">
+                <div class="card-body" style="margin-top: 25px">
+                <h5 class="card-title" >Logo Us</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 text-center d-flex justify-content-center">
+            <div class="card" style="width: 15rem;">
+              <img src="/public/images/comp6.jfif" class="card-img-top"  alt="...">
+              <div class="card-body" style="margin-top: -20px ">
+                <h5 class="card-title">Startup Support</h5>
+                
+              </div>
+            </div>
+        </div>
+        <div class="col-lg-3 text-center d-flex justify-content-center">
+            <div class="card" style="width: 15rem;">
+              <img src="public/images/comp5.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title" style="margin-top:-20px">Myntra</h5>
+               
+              </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>
+</div>
+        
+          <div class="footer">
+              <p>Copyright &#169; 2021 Alute</p>
+          </div>
+    </div>
+  </body>
+  </html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Requests</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Galdeano&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/assets/request.css">
+   
+</head>
+<body>
+
+     <!-- This is  start of the navbar -->
+     <nav class="topnav"  >
+      <ul>
+        <li style="float:left"><a id="title" href="/">Alute Logo</a></li>
+        
+        <%  if(!user){%>
+        <li><a class="alig" href="/#contact">Go to your account</a></li>
+        <%  }else{ %>
+            <li> <a href="/userprofile"><img src="/<%= user.img.path %>" alt=""></a></li>
+            <li><a class="alig" href="/logout">Logout</a></li>
+     
+      
+        <%  } %>
+        <li><a class="alig" href="/shop">Spend Credits</a></li>
+        
+        <li><a class="alig" href="/gallery">Explore</a></li>           
+        <li><a class="alig" href="/about">About</a></li>           
+        <li><a class="alig" href="/projects">Dashboard</a></li>
+        <li><a class="alig" href="/">Home</a></li>
+    </ul>
+    </nav>
+  
+    <!-- navbar end -->
+    
+
+      <!-- List of people requested to your project -->
+      <section>
+        <div class="container topRow" style="margin-top: 1rem;">
+          <div class="row">
+            <div class="col-3 text-center">
+              <p>Project Title</p>
+      
+            </div>
+            <div class="col-3 text-center">
+              <p class="created">Requested By</p>
+            </div>
+            <div class="col-6 text-center">
+              <p>Action</p>
+            </div>
+          </div>
+        </div>
+    
+          
+      
+    
+      
+            <!-- request -->
+            <%var temp=0,i=0;%>
+            <%applications.forEach(function(application){%>
+              <%if(temp==0){%>
+                <div class="container gap" style="background-color: rgb(242, 247, 237); color:#0d0744"  >
+                  <%temp=1;%>
+                <%}else{%> 
+                <div class="container gap" style="background-color: rgb(181, 219, 171); color:white"  >
+                  <%temp=0;%>
+                <%}%>
+            <div class="row">
+              <div class="col-3 text-center">
+              <p><%=application.title%></p>
+      
+            </div>
+            <div class="col-3 text-center">
+              <%if(temp==1){%>
+             <a href="/userprofile/<%=application.userId%>" style="text-decoration: none;color: rgb(0, 0, 0);"> <p class="created"><%=application.name%></p></a>
+             <%}else{%>
+             <a href="/userprofile/<%=application.userId%>" style="text-decoration: none;color: rgb(255, 255, 255);"> <p class="created"><%=application.name%></p></a>
+             <%}%>
+            </div>
+            <div class="col-6 text-center">
+                <table>
+                    <tr>
+             
+                    
+                      <form action="/showgotrequest/<%=application.id%>/<%=application.userId%>/accept" method="post">             
+                        <button class="btn" type="submit">
+                          Confirm
+                        </button>
+                     </form>
+                     <form action="showgotrequest/<%=application.id%>/<%=application.userId%>/reject" method="post">
+             
+                      <button class="btn fun" type="submit">
+                        Reject/Remove from team
+                      </button>
+                      </form>
+            
+
+             </tr>
+            </table>
+             
+          
+         
+           
+            </div>
+            </div>
+        </div>
+       <!-- Modal -->
+
+
+           <!-- request -->
+           <%i++;console.log(i);})%>
+         
+          
+        
+      </section>
+
+    <!-- List ended -->
+
+
+    <!-- footer start -->
+        <div class="footer">
+            <p>Copyright &#169; 2021 Alute</p>
+        </div>
+      <!-- footer ended -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

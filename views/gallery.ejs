@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Galdeano&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/assets/gallery.css" />
+  </head>
+  <body>
+
+      <nav class="topnav"  >
+        <ul>
+          <li style="float:left"><a id="title" href="/">Alute Logo</a></li>
+          
+          <%  if(!user){%>
+          <li><a class="alig" href="/#contact">Go to your account</a></li>
+          <%  }else{ %>
+              <li> <a href="/userprofile"><img src="/<%= user.img.path %>" alt=""></a></li>
+              <li><a class="alig" href="/logout">Logout</a></li>
+       
+        
+          <%  } %>
+          <li><a class="alig" href="#contact">Contact</a></li>
+          
+          <li><a class="alig" href="/#explore">Explore</a></li>           
+          <li><a class="alig" href="/#features">Features</a></li>
+          <li><a class="alig" href="/projects">Dashboard</a></li>
+          <li><a class="alig" href="/">Home</a></li>
+      </ul>
+    </nav>
+
+<div class="first-block">
+   <!-- gallery starting -->
+   <div class="row">
+      <div class="gallery col-md-4">
+        <a target="_blank" href="http://projectcentersinchennai.co.in/Domains/Final-Year-Project-Domains-for-IT">
+          <img src="/public/images/img1.jpg" alt="Cinque Terre" />
+        </a>
+        <div class="desc">Various Technical domains</div>
+      </div>
+
+      <div class="gallery col-md-4">
+        <a target="_blank" href="https://www.projectmanager.com/blog/project-kickoff-checklist">
+          <img src="/public/images/img2.png" alt="Forest" />
+        </a>
+        <div class="desc">Starting with projects</div>
+      </div>
+
+      <div class="gallery col-md-4">
+        <a target="_blank" href="https://www.simplilearn.com/top-technology-trends-and-jobs-article">
+          <img src="/public/images/img4.png" alt="Mountains" />
+        </a>
+        <div class="desc">Explore new technologies</div>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="gallery col-md-4">
+      <a target="_blank" href="https://www.quora.com/What-is-a-hackathon-What-do-you-do-in-it-Is-it-a-team-event-If-yes-what-are-team-sizes">
+        <img src="/public/images/img3.jpg" alt="Mountains" />
+      </a>
+      <div class="desc">Getting started with Hackathons</div>
+    </div>
+
+    <div class="gallery col-md-4">
+      <a target="_blank" href="https://nevonprojects.com/project-ideas/software-project-ideas/">
+        <img src="/public/images/img5.jpg" alt="Mountains" />
+      </a>
+      <div class="desc">500+ project ideas for help with ideation</div>
+    </div>
+   
+      <div class="gallery col-md-4">
+      <a target="_blank" href="https://www.thebalancecareers.com/what-is-github-and-why-should-i-use-it-2071946#:~:text=GitHub%20is%20a%20website%20for,examples%20of%20open%2Dsource%20software.">
+        <img src="/public/images/img6.jpeg" alt="Mountains" />
+      </a>
+      <div class="desc">Why Github?</div>
+    </div>
+  
+  </div>
+</div>
+<div class="second-block">
+  <div class="row">
+    <div class="gallery col-md-4">
+      <iframe
+        width="360"
+        height="315"
+        src="https://www.youtube.com/embed/SWYqp7iY_Tc"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; muted "
+        allowfullscreen 
+ 
+      ></iframe>
+    </div>
+
+
+    <div class="gallery col-md-4">
+      <iframe
+        width="360"
+        height="315"
+        src="https://www.youtube.com/embed/jnHYXPRBB9k;?rel=0&amp;autoplay=1&mute=1"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; muted "
+        allowfullscreen 
+ 
+      ></iframe>
+    </div>
+    <div class="gallery col-md-4">
+      <iframe
+        width="360"
+        height="315"
+        src="https://www.youtube.com/embed/YtxLexm-9pI?rel=0&amp;autoplay=1&mute=1"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; muted "
+        allowfullscreen 
+ 
+      ></iframe>
+    </div>
+  </div>
+</div>
+    
+        <div class="footer">
+            <p>Copyright &#169; 2021 Alute</p>
+        </div>
+        <!-- footer ended -->
+  </body>
+</div>
+</html>

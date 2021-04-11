@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alute</title>
+    <link rel="stylesheet" href="/public/assets/landing1.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Galdeano&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="first-block">
+    <nav class="topnav">
+        <ul>
+            <li style="float:left"><a id="title" href="/">Alute Logo</a></li>
+            
+            <%  if(user){%>
+            
+           
+                <li> <a href="/userprofile"><img src="/<%= user.img.path %>" alt=""></a></li>
+                <li><a class="alig" href="/logout">Logout</a></li>
+         
+          
+            <%  } %>
+            <li><a class="alig" href="#contact">Go to your account</a></li>
+               <li><a class="alig" href="/projects">Dashboard</a></li>
+            <li><a class="alig" href="#contact">Contact</a></li>
+            
+            <li><a class="alig" href="#explore">Explore</a></li>           
+            <li><a class="alig" href="#features">Features</a></li>
+         
+            <li><a class="alig" href="/">Home</a></li>
+        </ul>
+    </nav>
+        <div class="row">
+                    <img id="top-image" src="/public/images/landing.png">
+                    
+                    <span id="top-content"><span style="font-size:3.5rem; font-weight: bold">ALUTE</span>
+                        <br><br>
+                    Alute Do you want to improve your technical skills, collaborate with other fresh and potential laden minds, make amazing projects and contribute to the society at the same time? Well then, welcome to your destination!</span>
+        </div>
+        
+</div>
+<div class="second-block" id="features">
+    <div class="topic text-center">
+          Features
+    </div>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3 text-center d-flex justify-content-center">
+            <div class="card" style="width: 15rem;">
+              <img style="padding-top: 40px; padding-bottom: 30px" src="/public/images/ideas.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Explore new ideas</h5>
+                <p class="card-text">Use the explore section to get help with ideation or checkout what other creative minds like you have ideated upon in the projects dashboard!</p></div>
+            </div>
+        </div>
+        <div class="col-lg-4 text-center d-flex justify-content-center">
+            <div class="card" style="width: 15rem;">
+              <img style="padding-top: 35px; padding-bottom: 20px" src="/public/images/team.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Collaboration and team formation</h5>
+                <p class="card-text">Check out others' projects and apply for their teams or create your own team and start your coding journey!</p>
+              </div>
+            </div>
+        </div>
+        <div class="col-lg-3 text-center d-flex justify-content-center">
+            <div class="card" style="width: 15rem;">
+              <img src="/public/images/credits.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Earn credits</h5>
+                <p class="card-text">Our interesting credit and Alutoze system is going to keep you motivated to finish your projects and make more!</p>
+              </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>
+<div class="first-block" id="features">
+     <br>
+     <br>
+     <br>
+     <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-4 text-center d-flex justify-content-center">
+            <div class="card" style="width: 15rem;">
+              <img src="/public/images/donate.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Benefit the society</h5>
+                <p class="card-text">Have you always wanted to contribute to the society? Do it easily now along with your coding journey!</p>
+                
+              </div>
+            </div>
+        </div>
+        <div class="col-lg-4 text-center d-flex justify-content-center">
+            <div class="card" style="width: 15rem;">
+              <img src="/public/images/nature.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Contribute to nature</h5>
+                <p class="card-text">What's better than planting trees and saving the world with nothing but a click? It's your time to feel proud!</p>
+                
+              </div>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+    
+</div>
+<div class="second-block" id="explore">
+    <div >
+        <div class="topic text-center">
+            Benefits and Explore
+        </div>
+        <div class="text-center benefits">
+            <span style="color:rgba(255,255,255,0.6)">Improve your communication skills!<br></span>
+            <span >Expand your reach and network!<br></span>
+            <span style="color:rgba(255,255,255,0.6)">Interact with young minds from different parts of the world!<br></span>
+            <span >Develop your technical skills!<br></span>
+            <span style="color:rgba(255,255,255,0.6)">Earn more and more credits and indulge in a healthy competion with your peers and partners!<br></span>
+            <span >Feel proud of yourself by spending your credits to help nature, plant trees, help the needy and society in many ways such as making donations and becoming a part of campaigns... all with just one click and not spending real cash!<br></span>
+
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <a href="/gallery" id="gallery" style="color: rgb(47, 161, 186);"><button class="topic text-center col-md-10" style="padding:10px;font-size: 2rem; border-radius: 20px; border:none">
+                
+                Don't have experience in technical developement till now? No idea where to begin or how to use prior knowledge? Don't worry, we've got you covered! Click here to check out our EXPLORE section for an amazing headstart.
+            </a></button> 
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+    </div>
+    <div id="contact" class="row first-block" >
+        <div class="col-xs-12 col-lg-6 order-lg-2">
+            <div class="row">
+                    <div class="col-lg col-md-3"></div>
+                        <div class="col-lg-8 col-md-6 shadow goToAcc">
+                            <div>
+                                <h2>Go to your account</h2>
+                            </div>
+                            <div>
+                               
+                               
+                                
+                                <%if(user){%>
+                                    <p class="motto">You are already logged In</p>
+                                <a href="/projects"><p class="motto">Go to dashboard<svg style="margin-bottom: 10px;" xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                    <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                  </svg></p> </a>
+                                <%}else{%>
+                                    <p class="motto">Don't have one yet?</p>
+                                    <a href="/register">   <button class="shadow signUp-btn">Sign Up</button></a>
+                                    <p class="motto">Already have one?</p>
+                                    <a href="/login"><button class="shadow signUp-btn">Log In</button></a>
+                                   <a href="/projects"><p class="motto">Skip for now</p></a> 
+                                <%}%>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3"></div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-lg-6 order-lg-1 contactDetail" style="margin-top:-10px ;">
+                <p style="font-size: 30px">
+                    Contact Us
+                </p>
+              <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+
+                <a href="/about" ><button id="toabout"><br>Make sure you check the about page : Meet your admins, sponsors and also get a complete walk through to the website. <p class="abd">Click here now!</p> </button></a>
+            </div>
+                <div class="col-md-3"></div>
+
+            </div>
+               <br>
+                <p style="font-size: 20px">
+                    <span style="font-weight: bolder">Get to know :</span> <a href="">https://www.alute.org/</a>
+                </p>
+                    <div style="padding:0 40%">
+                    <img class="social" src="https://lh3.googleusercontent.com/wIf3HtczQDjHzHuu7vezhqNs0zXAG85F7VmP7nhsTxO3OHegrVXlqIh_DWBYi86FTIGk">
+                    <img class="social" src="https://thumbs.dreamstime.com/b/rounded-instagram-logo-web-print-transparent-white-background-use-printing-purpose-165758567.jpg">
+                    <img class="social" src="https://icons-for-free.com/iconfiles/png/512/facebook+logo+media+network+social+icon-1320192913497992427.png">
+                </div>
+        </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <div class="footer">
+        <p>Copyright &#169; 2021 Alute</p>
+    </div>
+        
+</body>
+</html>

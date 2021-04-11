@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=puser.email%></title>
+    <link href="https://fonts.googleapis.com/css2?family=Galdeano&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/assets/profile.css">
+  
+</head>
+<body>
+
+    <!-- This is  start of the navbar -->
+    <nav class="topnav"  >
+        <ul>
+          <li style="float:left"><a id="title" href="/">Alute Logo</a></li>
+          
+          <%  if(!user){%>
+          <li><a class="alig" href="/#contact">Go to your account</a></li>
+          <%  }else{ %>
+              <li> <a href="/userprofile"><img src="/<%= user.img.path %>" alt=""></a></li>
+              <li><a class="alig" href="/logout">Logout</a></li>
+       
+        
+          <%  } %>
+          <li><a class="alig" href="/shop">Contribute</a></li>
+          
+          <li><a class="alig" href="/gallery">Explore</a></li>           
+          <li><a class="alig" href="/#features">Features</a></li>
+          <li><a class="alig" href="/projects">Dashboard</a></li>
+          <li><a class="alig" href="/">Home</a></li>
+      </ul>
+    </nav>
+      <!-- navbar end -->
+
+
+   <!-- profile section start -->
+       <div class="container" style="margin-bottom: 5rem;">
+        <div class="row">
+            <div class="col-3">
+            <img src="/<%=puser.img.path%>" class="float-left" alt="">
+        </div>
+        <div class="col-9">
+            <ul class="list-group">
+            <li class="name list-group-item">Name: <%=puser.email%></li>
+            <li class="list-group-item">About me: <%=puser.about%></li>
+            <li class="list-group-item">Email: <%=puser.username%></li>
+            <li class="list-group-item">Institute:  <%=puser.institute%></li>
+            <li class="list-group-item">Skills:  <%=puser.skills%></li>
+            <li class="list-group-item">Favourite Programming Languages:  <%=puser.language%></li>
+            <li class="list-group-item"> <a href="<%=puser.github%>" target="_blank"> <%=puser.github%></a></li>
+            <li class="list-group-item"> <a href="<%=puser.linkedIn%>" target="_blank"><%=puser.linkedIn%></a></li>
+            <li class="list-group-item">Credits:<%=puser.credits%> <span style="margin-left:2rem">Alutoze:<%=puser.xp%></span></li>
+            
+        </ul>
+        
+  </div>
+
+  
+    
+
+    <!-- footer start -->
+    <div class="footer">
+        <p>Copyright &#169; 2021 Alute</p>
+    </div>
+        
+    <!-- footer ended -->
+ 
+</body>
+</html>

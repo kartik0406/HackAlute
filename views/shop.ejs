@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x: hidden;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items Cart</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Galdeano&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+    <link rel="stylesheet" href="/public/assets/shop.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- This is  start of the navbar -->
+    <nav class="topnav"  >
+      <ul>
+        <li style="float:left"><a id="title" href="/">Alute Logo</a></li>
+        
+        <%  if(!user){%>
+        <li><a class="alig" href="/#contact">Go to your account</a></li>
+        <%  }else{ %>
+            <li> <a href="/userprofile"><img src="/<%= user.img.path %>" alt=""></a></li>
+            <li><a class="alig" href="/logout">Logout</a></li>
+     
+      
+        <%  } %>
+        <li><a class="alig" href="#contact">Contact</a></li>
+        
+        <li><a class="alig" href="/#explore">Explore</a></li>           
+        <li><a class="alig" href="/#features">Features</a></li>
+        <li><a class="alig" href="/projects">Dashboard</a></li>
+        <li><a class="alig" href="/">Home</a></li>
+    </ul>
+  </nav>
+
+
+    <!-- navbar end -->
+    
+    
+     
+      </div>
+    <div class="row  text-center">
+         <div class="col-md-2"></div>
+         <div class="col-md-8 box">
+          <h5>Contributions aren't small or big, they're genuine and comes from inside! It's your chance to do something for the world you live in! </h5>
+          <h5>Choose to spend your credits from the following options. You should be proud of yourself, we sure are!</h5>
+          <h5>Ofcourse, you also earn Alutoze and build your profile! </h5>
+          <h6>Keep checking the Order History section in your profile to know the status of your contribution.</h6>
+         </div>
+         <div class="col-md-2"></div>
+      </div>
+
+      <div class="row  text-center" id="status"></div>
+    <!-- owner project list -->
+      <div class="row">
+
+        <%items.forEach(function(item){%>
+      <div class="col-md-4">
+    
+      <div class="column text-center">
+        
+          <div class="card" style="background-color: rgb(242, 247, 237);padding:15px"> 
+            <img src="<%=item.img.path%>" alt="Avatar" style="width:200px; border-radius: 20px; margin-bottom:10px; margin-top: 0px">
+         
+            <div style="font-size: 25px"><strong><%=item.title%></strong></div>
+           <br>
+             <h6 style="text-align: justify;"> <%=item.description%></h6>
+             <strong> <div style="font-size: 20px;"><%=item.swag%></div></strong>
+            <p>Credits:<%=item.credits%> <span style="margin-left: 10px;"><br>Alutoze awarded:<%=item.alutoze%></span></p>
+            <div class="task text-center">
+             
+              <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter-<%=item._id%>"> Spend Credits</button>
+                         <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter-<%=item._id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"><%=item.title%></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+     
+      </div>
+      <b><h6 class="modal-title" id="exampleModalLongTitle" style="margin-left:10px">Your Credits:<%=user.credits%> <span  style="margin-left:6px">Credits spend:<%=item.credits%></span></h6></b>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" >Close</button>
+        <form  id="form1" action="/shop/<%=item._id%>" method="POST">
+          <button type="submit" id="purchase" onclick="status()" class="btn"  data-toggle="modal" data-target="#exampleModalCenter">Confirm Purchase</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+          
+            </div>
+          </div>
+   
+      </div>
+  
+     </div>
+
+
+<script>
+  $('#purchase').click(function() {
+    $('#exampleModalCenter-<%=item._id%>').modal('hide');
+});
+  function status(){
+   
+    var usercredits=<%-user.credits%>;
+          var itemcredits=<%-item.credits%>;
+          if(usercredits>=itemcredits){
+             document.getElementById("status").innerHTML=` <div class="col-md-12 box">
+       <b> <span style="font-size: 20px;color:rgb(10, 20, 104)">Your purchase has been successfully made</span></b></div>`;
+          }
+          else{
+            document.getElementById("status").innerHTML=` <div class="col-md-12 box">
+       <b> <span style="font-size: 20px;color:rgb(10, 20, 104)">You have lesser credits to make this purchase</span></b></div>`;;
+          }
+        }
+      </script>
+     
+       <%})%>
+    
+     
+  
+       
+      
+  
+      
+
+
+      </div>
+       <!-- project list ended -->
+
+
+      <!-- footer start -->
+      <div class="footer">
+        <p>Copyright &#169; 2021 Alute</p>
+    </div>
+    <!-- footer ended -->
+
+
+      
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
