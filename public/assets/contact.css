@@ -1,0 +1,163 @@
+html
+{
+scroll-behavior: smooth;
+background-image: url("/public/images/bg3.jpg");
+	height: 500px;
+
+	background-size: cover;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #1A237E;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .alig{
+    margin-top: 1.1rem;
+  }
+  .topnav img{
+   
+    margin-top: 0px;
+    margin-left: 14rem;
+    width: 60px;
+  }
+  .topnav a:hover {
+    background-color: #1A237E;
+    color: #a4acff;
+  }
+  #title{
+    text-align: center;
+    margin-right: 16rem;
+    font-size: 25px;
+    font-weight: 570;
+    margin-top: 1.1rem;
+
+  }
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #1A237E;
+        color: white;
+        text-align: center;
+     }
+    
+.full{
+    max-width:960px;
+    margin:0 auto;
+   
+    
+}
+h1{
+  color: #a3ceff;
+}
+.Contact-Form{
+    width:100%;
+    margin:0 auto;
+    text-align:center;
+    margin-top:50px;
+}
+.Contact-Form h2{
+    color:#ffffff;
+    text-transform:capitalize;
+    margin-bottom:20px;
+    font-size:30px;
+}
+.Contact-Form p{
+    color:#9999B9;
+    margin-bottom:50px;
+}
+.input-fields{
+    width:45%;
+    float:left;
+    overflow:hidden;
+    margin-right:30px;
+    margin-top:2px;
+}
+.input-fields input{
+     width:354px;
+     padding:15px 20px;
+     margin-bottom:20px;
+     border:0;
+     border-radius:3px ;
+ }
+.msg{
+    width:45%;
+    overflow:hidden;
+    margin-top: 70px;
+}
+.msg textarea{
+    width:354px;
+     padding:10px 20px;
+     margin-bottom:20px;
+     height:160px;
+     border:0;
+     border-radius:3px ;
+     resize:none;
+}
+.Contact-Form button{
+    padding:15px 20px;
+    color:#ffffff;
+    text-transform:uppercase;
+    border:1px solid rgb(12, 12, 12);
+    background:#1A237E;
+    cursor:pointer;
+    border-radius:3px;
+    margin-right: 40px;
+    margin-top: 15px;
+}
+ .Contact-Form button:hover{
+   border:1px solid blue;
+   background-color: #0a1052;
+
+ }
+.details{
+    width: 300px;
+    height:150px;
+    color: rgb(42, 93, 231);
+  
+    padding:10px;
+    float:left;
+  
+    margin-right:160px;
+    margin-top:20px;
+    border-radius:3px;
+    margin-bottom:150px;
+}
+
+.details h3{
+    font-size:21px;
+    color:#a3ceff;
+    font-style:normal;
+    margin-left:10px;
+    margin-bottom:20px;
+    text-transform:uppercase;
+    text-align:left;
+    
+}
+.details p{
+   font-size:17.5px;
+   font-family: 'Times New Roman', Times, serif;
+    color:#ffffff;
+    font-style:normal;
+    margin:0;
+    padding:0;
+    text-align:left;
+    text-transform:capitalize;
+    margin-left:10px;
+  
+}

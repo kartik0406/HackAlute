@@ -1,0 +1,154 @@
+html
+{
+scroll-behavior: smooth;
+}
+
+body 
+{
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
+
+}
+
+
+.row{
+  margin:auto 0px!important;
+}
+
+.first-block
+{
+    background-image: url("/public/images/bg.png");
+    background-size: cover;
+    height: 100vh;
+    width: 100%
+} 
+
+.topnav 
+{
+    width: 100%;
+    background-image:url("/public/images/bg.png");
+    background-size: cover;
+    border-radius: 0px;
+    padding:1%;
+    height: 80px;
+}
+.topnav img{
+
+    
+    
+    width: 60px;
+  }
+
+.topnav a:hover 
+{
+    font-weight: bold;
+    text-decoration: none;
+    color: white
+}
+
+ul
+{
+    margin: 5px;
+    padding-left: 10px;
+    padding-right: 15px
+}
+
+li
+{
+    list-style: none;
+    float: right;
+    padding:0 1%;
+}
+
+li a 
+{
+    font-size: 30px;
+    text-decoration: none;
+    font-family: Galdeano;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 48px;
+    text-align: justify;
+    color:white
+}
+ 
+#title
+{
+    text-align: center;
+    font-weight: 600;
+}
+
+#top-content
+{
+    position: absolute;
+    height: 492px;
+    left: 54.93%;
+    right: 6.02%;
+    line-height: 2rem;
+    top: 30vh;
+    font-family: Galdeano;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2rem;
+    text-align: justify;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.first-block
+{
+    background-image: url("/public/images/bg.png");
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    padding-top:50px;
+} 
+  .second-block
+{
+    background-image: url("/public/images/bg2.png");
+    background-size: cover;
+    height: 100vh;
+}
+
+
+     div.gallery {
+        text-align: center;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.2rem;
+        text-align: justify;
+        color: #FFFFFF;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        margin-bottom:10px; 
+      }
+      
+      div.gallery:hover {
+       
+        font-weight: bolder
+      }
+      
+      div.gallery img {
+       width:100%;
+    height:208px;    }
+      
+      div.desc {
+        
+        text-align: center;
+      }
+
+
+
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: (0,0,0,0);
+    color: black;
+    text-align: center;
+    font-weight: bolder;
+    color:white;
+ }

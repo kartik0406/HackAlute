@@ -1,0 +1,123 @@
+html
+{
+  scroll-behavior: smooth;
+  padding:0;
+  margin:0;
+  top:0;
+}
+
+body 
+{
+    margin: 0 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
+
+}
+
+
+.first-block
+{
+    background-image: url("/public/images/bg.png");
+    background-size: cover;
+    height: 150vh;
+    width: 100%
+} 
+
+.topnav 
+{
+    position: fixed;
+    width: 100%;
+    background: rgb(0,0,0,0.2);
+    border-radius: 0px;
+    padding:1%;
+    height: 80px;
+} 
+.topnav img{
+
+    
+    
+    width: 60px;
+  }
+
+.topnav a:hover 
+{
+    font-weight: bold;
+    text-decoration: none;
+    color: white
+}
+
+ul
+{
+    margin: 5px;
+    padding-left: 10px;
+    padding-right: 15px
+}
+
+li
+{
+    list-style: none;
+    float: right;
+    padding:0 1%;
+}
+
+li a 
+{
+    font-size: 30px;
+    text-decoration: none;
+    font-family: Galdeano;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 48px;
+    text-align: justify;
+    color: white;
+}
+ 
+#title
+{
+    text-align: center;
+    font-weight: 600;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: (0,0,0,0);
+    color: black;
+    text-align: center;
+    font-weight: bolder;
+    color:white;
+ }
+.topic{
+    width: 100%;
+    margin: auto;
+    margin-bottom: 30px;
+    font-family: Galdeano;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.5rem;
+    text-align: justify;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.second-block
+{
+    background-image: url("/public/images/bg2.png");
+    background-size: cover;
+    height: 150vh;
+}
+img{
+  width:400px;
+}
+
+.content{
+  color: white;
+  font-family: Galdeano;
+ 
+  font-size: 1.5rem
+}
+.card{
+  padding:5px 5px 0 5px;
+
+}
