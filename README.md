@@ -1,6 +1,6 @@
 # ALUTE - Learn and Contribute
-Overall 3rd Winner at Internation Hack - Hack from the past by MLH
-Best Education Hack at Technica'21
+- Overall 3rd Winner at Internation Hack - Hack from the past by MLH
+- Best Education Hack at Technica'21
 ## Team name - Lithium
 
 ## Team-Members:
