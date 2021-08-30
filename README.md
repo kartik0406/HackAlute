@@ -1,9 +1,9 @@
 # ALUTE - Learn and Contribute
-# Website Deployement Link:
-https://alute.herokuapp.com/
-
 - Overall 3rd Place in an International Hack - Hack from the past by MLH
 - Won Best Educational Hack at Technica'21
+
+ Website Deployement Link: https://alute.herokuapp.com/
+ 
 ## Team name - Lithium
 
 ## Team-Members:
@@ -90,19 +90,6 @@ https://bit.ly/3uy9K7o
 ## Screenshots
 
 ![](https://github.com/Harsh-1309/HackAlute/blob/main/Screenshots/f1.PNG)
-![](https://github.com/Harsh-1309/HackAlute/blob/main/Screenshots/f2.PNG)
-![](https://github.com/Harsh-1309/HackAlute/blob/main/Screenshots/f3.PNG)
-![](https://github.com/Harsh-1309/HackAlute/blob/main/Screenshots/f4.PNG)
-![](https://github.com/Harsh-1309/HackAlute/blob/main/Screenshots/f5.PNG)
-![](https://github.com/Harsh-1309/HackAlute/blob/main/Screenshots/f6.PNG)
-![](https://github.com/Harsh-1309/HackAlute/blob/main/Screenshots/f7.PNG)
-![](https://github.com/Harsh-1309/HackAlute/blob/main/Screenshots/f8.PNG)
-![](https://github.com/Harsh-1309/HackAlute/blob/main/Screenshots/f9.PNG)
-![](https://github.com/Harsh-1309/HackAlute/blob/main/Screenshots/f10.PNG)
-![](https://github.com/Harsh-1309/HackAlute/blob/main/Screenshots/f11.PNG)
-![](https://github.com/Harsh-1309/HackAlute/blob/main/Screenshots/f12.PNG)
-![](https://github.com/Harsh-1309/HackAlute/blob/main/Screenshots/f13.PNG)
-![](https://github.com/Harsh-1309/HackAlute/blob/main/Screenshots/f14.PNG)
-![](https://github.com/Harsh-1309/HackAlute/blob/main/Screenshots/image_1.PNG)
+
 
 
