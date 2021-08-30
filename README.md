@@ -2,7 +2,7 @@
 - Overall 3rd Place in an International Hack - Hack from the past by MLH
 - Won Best Educational Hack at Technica'21
 
- Website Deployement Link: https://alute.herokuapp.com/
+ Website Deployment Link: https://alute.herokuapp.com/
  
 ## Team name - Lithium
 
