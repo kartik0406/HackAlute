@@ -89,7 +89,13 @@ https://bit.ly/3uy9K7o
 
 ## Screenshots
 
-![](https://github.com/Harsh-1309/HackAlute/blob/main/Screenshots/f1.PNG)
+![](https://github.com/kartik0406/HackAlute/blob/main/img1.PNG)
+![](https://github.com/kartik0406/HackAlute/blob/main/img2.PNG)
+![](https://github.com/kartik0406/HackAlute/blob/main/img3.PNG)
+![](https://github.com/kartik0406/HackAlute/blob/main/img4.PNG)
+![](https://github.com/kartik0406/HackAlute/blob/main/img5.PNG)
+![](https://github.com/kartik0406/HackAlute/blob/main/img6.PNG)
+![](https://github.com/kartik0406/HackAlute/blob/main/img7.PNG)
 
 
 
